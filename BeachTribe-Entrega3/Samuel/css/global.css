@@ -1,0 +1,237 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #161616;
+    color: #ffffff;
+}
+
+/* Header for Logo */
+header {
+    padding: 10px 20px;
+    background-color: #161616;
+    text-align: center;
+}
+
+.logo {
+    width: 150px;
+    position: relative;
+    height: auto;
+    top: 110px;
+}
+
+
+.landing {
+    display: flex;
+    height: 100vh;
+    width: 100%;
+    padding-top: 80px; 
+}
+
+/* Left Side */
+.landing-left {
+    flex: 1;
+    background-color: #161616;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.main-visual {
+    width: 92%;
+    height: auto;
+    border-radius: 10px;
+}
+
+/* Right Side */
+.landing-right {
+    flex: 1;
+    background-color: #161616;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 50px;
+    background-color: #161616;
+}
+
+.landing-right h1 {
+    font-size: 3em;
+    margin-bottom: 20px;
+    color: #f4A460;
+}
+
+.landing-right p {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+    color: #cccccc;
+}
+
+/* Form Styling */
+.contact-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    background-color: #333;
+    border: 1px solid #60B0f4;
+    border-radius: 5px;
+    color: #ffffff;
+}
+
+.btn {
+    padding: 13px 39px;
+    background-color: #60B0f4;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+/* Activities Section */
+.activities {
+    padding: 50px;
+    text-align: center;
+    background-color: #1a1a1a;
+}
+
+.activities h2 {
+    font-size: 2.5em;
+    color: #f4A460;
+    margin-bottom: 30px;
+}
+
+.activities-grid {
+    display: flex;
+    justify-content: space-between;
+}
+
+.activity-card {
+    background-color: #333;
+    padding: 20px;
+    border-radius: 10px;
+    width: 30%;
+    text-align: center;
+}
+
+.activity-card h3 {
+    font-size: 1.5em;
+    color: #60B0f4;
+    margin-bottom: 10px;
+}
+
+.activity-card p {
+    font-size: 1.1em;
+    color: #cccccc;
+}
+
+/* Testimonials Section */
+.testimonials {
+    padding: 50px;
+    text-align: center;
+    background-color: #111;
+}
+
+.testimonials h2 {
+    color: #f4A460;
+    font-size: 2.5em;
+    margin-bottom: 30px;
+}
+
+.testimonials-grid {
+    display: flex;
+    justify-content: space-between;
+}
+
+.testimonial {
+    background-color: #222;
+    padding: 20px;
+    border-radius: 10px;
+    width: 30%;
+    color: #ffffff;
+    text-align: center;
+}
+
+/* Footer Section */
+footer {
+    padding: 20px;
+    text-align: center;
+    background-color: #161616;
+    color: #cccccc;
+}
+
+footer p{
+    color: #60B0f4;
+    margin-top: 5px
+}
+
+footer .social-links a {
+    color: #f4A460;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+footer .social-links a:hover {
+    color: #f4A460;
+}
+
+/* For devices smaller than 768px */
+@media (max-width: 768px) {
+    .landing {
+        flex-direction: column;
+    }
+
+    .main-visual {
+        width: 100%;
+    }
+
+    .logo {
+        width: 150px;
+        position: relative;
+        height: auto;
+        top: 50px;
+    }
+
+    .landing-right {
+        padding: 20px;
+    }
+
+    .landing-right h1 {
+        font-size: 2.2em;
+    }
+
+    .landing-right p {
+        font-size: 1em;
+    }
+
+    .btn {
+        font-size: 1em;
+    }
+
+    .activities {
+        padding: 70px;
+        margin-top: 172px;
+        text-align: center;
+        background-color: #1a1a1a;
+    }
+
+    .activities h2, .testimonials h2 {
+        font-size: 2em;
+    }
+}

@@ -1,0 +1,309 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.areacima{
+    width: 100%;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    align-content: center;
+}
+.areacima img{
+    margin-left: 50px;
+}
+#Logotipo {
+    width: 90px;
+}
+
+
+.areabaixo{
+    width: 100%;
+    height: 100px;
+    align-items: center;
+    text-align: center;
+    align-content: center;
+    background-color: #161616;
+    color: white;
+}
+
+.area{
+    width: 100%;
+    height: 100%;
+    background-image:url(img/windBG.png);
+    background-size: cover;
+    background-color: #60B0F4;
+    display:flex;
+}
+.area1{
+    height: 100%;
+    width: 50%;
+    color: white;
+}
+
+.contxt{
+    width: 100%;
+    margin-left: 200px;
+    margin-top: 180px;
+    margin-bottom: 150px;
+}
+
+.tlt1{
+    font-size: 40px;
+}
+.tlt2{
+    font-size: 60px;
+}
+.subtlt{
+    margin-top: 90px;
+    font-size: 40px;
+}
+.desc{
+    font-size: 35px;
+    width: 800px;
+}
+
+.area2{
+    height: 100%;
+    width: 50%;
+    align-content: center;
+    align-items: center;
+    color: white;
+}
+
+
+.areageral{
+    width: 600px;
+    height: 1000px;
+    margin-top: 180px;
+    margin-bottom: 150px;
+    background-color:#F4A460;
+    margin-left: 300px;
+    border-radius: 2px;
+}
+.areageral label{
+    font-size: 30px;
+    margin-left: 50px;
+    margin-bottom: 5px;
+}
+.areageral input{
+    width: 512px;
+    font-size: 30px;
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-bottom: 5px;
+    color: #161616;
+}
+.btnsub{
+    text-align: center;
+    align-content: center;
+    align-content: center;
+    margin-top: 40px;
+    margin-bottom: 50px;
+}
+.sub{
+    width: 400px;
+    height: 70px;
+    background-color: #60B0F4;
+    font-size: 30px;
+    color: white;
+    border-radius: 5px;
+    border-color: #60B0F4;
+}
+.sub:hover{
+    width: 405px;
+    height: 75px;
+}
+.notice{
+    font-size: 20px;
+    text-align: center;
+    align-content: center;
+    align-content: center;
+}
+
+.tlt3{
+    font-size: 40px;
+    text-align: center;
+}
+@media screen and (max-width: 767px) {
+    .areacima {
+        height: 60px;
+    }
+
+    .areacima img {
+        margin-left: 10px;
+        width: 100px; 
+    }
+
+    .area {
+        flex-direction: column; 
+        align-items: center;
+        width: 100%; 
+        padding: 0; 
+        overflow-x: hidden; 
+    }
+
+    .area1, .area2 {
+        width: 100%; 
+        margin: 0; 
+    }
+
+    .contxt {
+        margin: 20px 10px;
+        text-align: center;
+    }
+
+    .tlt1 {
+        font-size: 24px; 
+    }
+
+    .tlt2 {
+        font-size: 32px; 
+    }
+
+    .subtlt {
+        font-size: 22px;
+        margin-top: 20px;
+    }
+
+    .desc {
+        font-size: 18px; 
+        width: 90%; 
+        margin: 10px auto;
+    }
+
+    .areageral {
+        width: 95%; 
+        height: auto; 
+        margin: 20px auto; 
+        background-color: #F4A460; 
+        padding: 20px; 
+        border-radius: 5px;
+        display: flex;
+        flex-direction: column; 
+        align-items: center; 
+        text-align: center;
+    }
+
+    .areageral label {
+        width: 100%;
+        font-size: 18px;
+        margin-bottom: 5px;
+    }
+
+    .areageral input {
+        width: 100%; 
+        font-size: 20px; 
+        margin-bottom: 10px;
+    }
+
+    .btnsub {
+        text-align: center; 
+        width: 100%;
+    }
+
+    .btnsub .sub {
+        width: 90%; 
+        height: 50px;
+        font-size: 20px; 
+    }
+
+    .sub:hover {
+        width: 92%; 
+        height: 52px;
+    }
+
+    .notice {
+        font-size: 16px; 
+    }
+
+    .areabaixo {
+        height: 80px;
+        font-size: 16px; 
+    }
+}@media screen and (max-width: 767px) {
+    .areacima {
+        height: 60px;
+    }
+
+
+    .area {
+        flex-direction: column; 
+        align-items: center;
+        width: 100%; 
+        padding: 0;
+        overflow-x: hidden; 
+    }
+
+    .area1, .area2 {
+        width: 100%;
+        margin: 0;
+    }
+
+    .contxt {
+        margin: 20px 10px;
+        text-align: center;
+    }
+
+    .tlt1 {
+        font-size: 24px; 
+    }
+
+    .tlt2 {
+        font-size: 36px; 
+    }
+
+    .tlt3{
+        font-size: 36px;
+    }
+
+    .subtlt {
+        font-size: 24px; 
+        margin-top: 20px;
+    }
+
+    .desc {
+        font-size: 18px; 
+        width: 90%;
+        margin: 10px auto;
+    }
+
+   
+    .areageral {
+        width: 90%;
+        height: auto;
+        margin: 20px auto;
+        background-color: #F4A460;
+        padding: 20px;
+        border-radius: 5px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .areageral label, .areageral input {
+        width: 95%; 
+        font-size: 18px;
+        margin: 10px 0;
+    }
+
+    .btnsub .sub {
+        width: 85%;
+        height: 50px;
+        font-size: 20px;
+    }
+
+    .notice {
+        font-size: 16px;
+    }
+
+    .areabaixo {
+        height: 80px;
+        font-size: 16px;
+    }
+}
+
+
+

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BeachTribe - Promoções</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link href='https://fonts.googleapis.com/css?family=IBM%20Plex%20Mono' rel='stylesheet'>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div id="LandingPageMarcelo">
+
+        <section class="HeroImageSection">
+            <div class="HeroImageTopSection">
+                <div class="LogoBeachTribe">Logo</div>
+                <h1 class="beachtribetitle">BeachTribe</h1>
+            </div>
+            <div class="HeroImageBottomSection">
+                <div>
+                    <div id="HeroImageLandingText">
+                        <span id="HeroImageLandingTextTitle">PROMOÇÕES BLACK FRIDAY ATÉ 70%</span>
+                        <span id="HeroImageLandingTextsubTitle">Encontra aqui os melhores descontos da Black Friday para poderes<br>
+                            aproveitar da melhor forma a tua praia favorita!!! </span>
+                    </div>
+                    <a href="#FormSection"><div id="HeroImageButton" onclick="highlightForm()">Descobrir Mais</div></a>
+                </div>
+            </div>
+        </section>
+
+        <section id="CategoriasPromocao">
+            <h2 class="categoriastitle">Algumas categorias em promoção</h2>
+            <div>
+                <div>
+                    <img class="categoriaimg" src="img/landingpagemarcelo/raquetespraia.webp" alt="DESPORTOS DE PRAIA"> <!-- Imagem retirada de "https://beachtennisboutique.com/" -->
+                    <span class="subtitlecategorias">DESPORTOS DE PRAIA</span>
+                    <span class="textocategorias">Encontra os melhores equipamentos de<br>desporto, com qualidade e variedade para<br>garantir diversão e atividade à beira mar.</span>
+                </div>
+                <div>
+                    <img class="categoriaimg" src="img/landingpagemarcelo/roupa.png" alt="VESTUÁRIO"> <!-- Imagem retirada de "https://reads.alibaba.com/ultimate-style-guide-for-mens-surfing-adventure-autumn-winter-2022-23/" -->
+                    <span class="subtitlecategorias">VESTUÁRIO</span>
+                    <span class="textocategorias">Encontra aqui a melhor roupa de praia!<br>Ideal para relaxar ou praticar desportos<br>na água, sempre a oferecer o melhor<br>conforto e tendências.</span>
+                </div>
+                <div>
+                    <img class="categoriaimg" src="img/landingpagemarcelo/desportomar.jpg" alt="DESPORTOS AQUÁTICOS"> <!-- Imagem retirada de "https://reme.paddles.com.br/stand-up-paddle-para-iniciantes/" -->
+                    <span class="subtitlecategorias">DESPORTOS AQUÁTICOS</span>
+                    <span class="textocategorias">Encontra os melhores equipamentos para<br>os teus desportos aquáticos favoritos<br>à beira-mar com qualidade garantida e<br>diversão durante as tuas atividades.</span>
+                </div>
+            </div>
+        </section>
+
+        <section id="FormSection">
+            <h2>Com interesse nas nossas ofertas?</h2>
+            <form id="LandingForm">
+                <span>Inscreve-te para ficares a par das nossas ofertas!</span>
+                <div class="forminput">
+                  <label for="Nome" class="formlabel">Nome:</label>
+                  <input type="text" class="formcontrol" id="Nome" required>
+                </div>
+                <div class="forminput">
+                  <label for="Email" class="formlabel">Email:</label>
+                  <input type="email" class="formcontrol" id="Email" required>
+                </div>
+                <div class="forminput">
+                  <label for="phoneNumber" class="formlabel">Telemóvel:</label>
+                  <input type="tel" class="formcontrol" id="phoneNumber" required>
+                </div>
+                <div class="forminput">
+                  <label for="message" class="formlabel">Observações:</label>
+                  <textarea class="formcontrol" id="message"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Submeter</button>
+              </form>
+        </section>
+    </div>
+
+    <script src="js/highlightform.js"></script>
+</body>
+</html>
+
