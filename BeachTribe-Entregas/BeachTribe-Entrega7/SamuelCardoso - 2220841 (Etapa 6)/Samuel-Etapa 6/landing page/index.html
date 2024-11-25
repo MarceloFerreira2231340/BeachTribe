@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/global.css">
+    <title>BeachTribe</title>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <!-- Logo -->
+            <img src="logotipo/LogoFull.webp" alt="1" href="#" class="logo">
+            <!-- Navigation Links -->
+            <ul class="nav-links">
+                <li><a href="https://wordpress.g6.dwm202425.online/" class="nav-item">Ir para o site oficial da Beach Tribe?</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Landing Section with Form -->
+    <section class="landing">
+        <!-- Left Side -->
+        <div class="landing-left">
+            <img src="img/Heroimage/surf.jpg" alt="Main Visual" class="main-visual">
+        </div>
+
+        <!-- Right Side (Text and Form) -->
+        <div class="landing-right">
+            <h1>BeachTribe</h1>
+            <p>Junte-se a nós no <b>"BeachTribe"</b> para desportos aquáticos emocionantes.<br/> Pronto para sua próxima experiência? <br/> Preencha o formulário abaixo para reservar agora!</p>
+
+            <!-- Form Section -->
+            <form class="contact-form">
+                <div class="form-group">
+                    <label for="name">Nome:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="activity">Selecione uma opção:</label>
+                    <select id="activity" name="activity">
+                        <option value="surfing">Surf</option>
+                        <option value="volleyball">volleyball</option>
+                        <option value="Jet ski">Jet Ski</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Menssagem:</label>
+                    <textarea id="message" name="message" rows="4" required></textarea>
+                </div>
+
+                <button type="submit" class="btn primary-btn">Submeter</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Activity Features Section -->
+    <section class="activities">
+        <h2>Nossas atividades:</h2>
+        <div class="activities-grid">
+            <div class="activity-card">
+                <h3>Volleyball</h3>
+                <p>Venha aprender a jogar volleyball com os nossos especialistas</p>
+            </div>
+            <div class="activity-card">
+                <h3>Surf</h3>
+                <p>Vem agarrar as ondas com aulas de surf para todos os níveis de habilidade.</p>
+            </div>
+            <div class="activity-card">
+                <h3>Parapente</h3>
+                <p>Sobrevoe a praia e aprecie vistas de tirar o fôlego e fascinantes enquanto pratica Parapente.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <h2>O que os nossos clientes comentam:</h2>
+        <div class="testimonials-grid">
+            <div class="testimonial">
+                <p>"BeachTribe é de longe o melhor! Eu diverti-me muito a aprender e a jogar volleyball" - <b>Sarah</b></p>
+            </div>
+            <div class="testimonial">
+                <p>"Surfar no BeachTribe fez me sentir como um profissional. Recomendo a experimentarem!" - <b>João</b></p>
+            </div>
+            <div class="testimonial">
+                <p>"A experiência de Parapente foi incrível. Mal posso esperar para voltar!" - <b>Emília</b></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="social-links">
+            <a href="#">Facebook</a> | <a href="#">Instagram</a> | <a href="#">Twitter</a>
+        </div>
+        <p>&copy; 2024 BeachTribe.</p>
+    </footer>
+</body>
+</html>
