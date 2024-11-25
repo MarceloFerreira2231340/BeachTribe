@@ -1,0 +1,359 @@
+:root{
+    --azul: #60b0f4;
+    --laranja: #f4a460;
+    --background: #161616;
+    --fonte: century-gothic, sans-serif;
+}
+
+nav, footer{
+    position: relative;
+    box-sizing: border-box;
+}
+
+nav p, footer p{
+    font-family: var(--fonte);
+    color: var(--laranja);
+    margin: 0;
+    padding: 0;
+}
+
+nav{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 80px;
+    z-index: 100;
+    background-color: var(--background);
+}
+
+#nav_logo_div{
+    padding-left: 50px;
+    height: 80px;
+}
+
+#nav_logo_div img{
+    margin-top: 10px;
+    height: 60px;
+}
+
+#nav_section{
+    margin-top: -80px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+#nav_aaa{
+    display: flex;
+    flex-direction: row;
+    float: right;
+    margin-top: 10px;
+}
+
+.content_nav{
+    height: 80px;
+    font-size: 14pt;
+    font-weight: bold;
+    color: var(--laranja);
+    margin-right: 40px;
+    text-decoration: none;
+    transition: 0.2s;
+}
+
+.content_nav p{
+    margin-top: 16px;
+}
+
+#nav_login{
+    display: flex;
+    flex-direction: row;
+}
+
+#login_logo{
+    margin-top: 13px;
+    margin-left: 10px;
+    height: 30px;
+    float: right;
+}
+
+.content_nav:hover{
+    color: var(--azul);
+    transition: 0.2s;
+    padding-top: +5px;
+}
+
+.content_nav:hover, .content_nav p:hover{
+    color: var(--azul);
+    transition: 0.2s;
+}
+
+.dropdown{
+    display: none;
+    overflow: hidden;
+    width: 100%;
+}
+
+.dropbtn{
+    height: 60px;
+    font-size: 14pt;
+    font-weight: bold;
+    color: var(--laranja);
+    text-decoration: none;
+    margin-top: 10px;
+    transition: 0.2s;
+    display: none;
+    float: right;
+}
+
+.dorpdownIcons{
+    height: 60px;
+    margin-left: 30%;
+}
+
+#dropdownIcon2{
+    display: none;
+}
+  
+.dropdown-content{
+    display: none;
+    width: 100%;
+    height: auto;
+    margin: 0;
+    background-color: var(--background);
+}
+
+.nav_responsive{
+    width: 100%;
+    padding: 0;
+    text-align: center;
+    text-decoration: none;
+    padding-bottom: 25px;
+}
+
+#nav_spacer{
+    height: 80px;
+}
+
+
+
+footer{
+    background-color: var(--background);
+    display: block;
+    bottom: 0;
+    width: 100%;
+    height: auto;
+    padding-top: 50px;
+    padding-bottom: 100px;
+}
+
+#footer_section1{
+    display: flex;
+    flex-direction: column;
+    margin-right: 15%;
+}
+
+#footer_section2{
+    margin-top: 40px;
+}
+
+#footer_section2 p{
+    margin-left: 10px;
+    transition: 0.2s;
+}
+
+#footer_section2 p:hover{
+    margin-left: 15px;
+}
+
+#footer_table{
+    width: 500px;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+}
+
+#footer_textarea_1{
+    margin-right: 80px;
+}
+
+#footer_body{
+    align-items: center;
+    align-self: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: row;
+}
+
+#footer_line1{
+    background-color: var(--laranja);
+    height: 2px;
+    width: 500px;
+    border-radius: 20px;
+}
+
+#footer_line2{
+    background-color: var(--laranja);
+    height: 2px;
+    width: 250px;
+    border-radius: 20px;
+    margin-top: 37px;
+}
+
+.footer_textarea{
+    margin-left: 20px;
+    width: 200px;
+}
+
+.content_footer{
+    font-size: 13pt;
+    font-weight: bold;
+    color: var(--laranja);
+    text-decoration: none;
+    transition: 0.2s;
+    margin-left: 10px;
+    
+}
+
+.content_footer p{
+    width: 100%;
+    transition: 0.2s;
+}
+
+.content_footer:hover p{
+    width: 100px;
+    margin-left: +5px;
+    color: var(--azul);
+    transition: 0.2s;
+}
+
+#footer_section1 .content_footer p{
+    width: 200px;
+}
+
+#title_footer{
+    font-size: 24pt ;
+    margin-bottom: 5px;
+}
+
+
+
+@media(max-width: 1100px){
+    .nav_widescreen{
+        display: none;
+    }
+
+    .dropbtn{
+        display: initial;
+    }
+
+    .dropdown{
+        display: contents;
+    }
+
+    #nav_logo_div{
+        padding-left: 20px;
+    }
+
+    #footer_body{
+        flex-direction: column;
+    }
+
+    #footer_table{
+        width: 250px;
+        flex-direction: column;
+    }
+
+    #footer_section1{
+        margin: 0 auto 75px auto;
+    }
+
+    #footer_line1{
+        width: 250px;
+    }
+
+    #nav_aaa{
+        margin-top: 0;
+    }
+}
+
+.icon{
+  width: 50px;
+  transition: transform 0.1s;
+}
+
+.black-background {
+  background-color: black;
+}
+
+
+ body {
+  background-color: black;
+  color: white;
+}
+
+.hero {
+  background-image: url('caminho-para-sua-imagem.jpg');
+  background-size: cover;
+  background-position: center;
+  height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero h1 {
+  font-size: 4rem;
+  font-weight: bold;
+  color: white;
+}
+
+.black-bar {
+  background-color: black;
+  padding: 20px 0;
+}
+
+.black-bar h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: white;
+  margin: 0;
+}
+
+.text-section {
+  padding: 30px;
+  color: white;
+  background-color: #333333;
+  font-size: 14px;
+  text-align: center;
+}
+
+.services-section {
+  background-color: #F4A460;
+  padding: 50px 0;
+}
+
+.services-section h2 {
+  color: black;
+}
+
+.services-section p {
+  color: #333333;
+}
+
+.services-section img {
+  width: 50px;
+}
+
+.reserve-btn {
+  margin-top: 20px;
+  background-color: black;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  font-size: 16px;
+}
+
+.reserve-btn:hover {
+  background-color: white;
+  color: black;
+}

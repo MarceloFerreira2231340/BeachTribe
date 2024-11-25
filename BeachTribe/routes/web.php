@@ -15,5 +15,13 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\PageController;
 
-Route::get('/', [PageController::class, 'calendarioDeAulas'])->name('calendario');
+Route::get('/', [PageController::class, 'index'])->name('index');
+
+Route::get('/calendario', [PageController::class, 'calendarioDeAulas'])->name('calendario');
+
+Route::get('/eventos', [PageController::class, 'eventos'])->name('eventos');
+
+Route::get('/contactos', [PageController::class, 'contactos'])->name('contactos');
+
+Route::get('/surf', [PageController::class, 'surf'])->name('surf');
 
