@@ -34,7 +34,7 @@
                     <div class="index_s2_textareas">
                         <h2>Surf</h2>
                         <p>Desde aulas de surf a pranchas costumizadas, sinta-se à vontade para começar a praticar o desporto aquático mais popular do mundo.</p>
-                        <a href="surf.html">
+                        <a href="{{route('surf')}}">
                             <div class="index_s2_vermais">
                                 Ver mais
                             </div>
@@ -45,7 +45,7 @@
                     <div class="index_s2_textareas">
                         <h2>Windsurf</h2>
                         <p>Encontre tudo o que precisar para se aventurar no vento das marés portuguesas.</p>
-                        <a href="windsurf.html">
+                        <a href="">
                             <div class="index_s2_vermais" id="index_s2_vermais_id2">
                                 Ver mais
                             </div>
@@ -58,7 +58,7 @@
                     <div class="index_s2_textareas">
                         <h2>Bodyboard</h2>
                         <p>Descanse, refresque-se e aproveite a jornada de aprender uma nova atividade ao ar livre.</p>
-                        <a href="bodyboard.html">
+                        <a href="">
                             <div class="index_s2_vermais">
                                 Ver mais
                             </div>
@@ -94,7 +94,7 @@
                     </div>
                 </div>
             </div>
-            <a href="eventos.html">
+            <a href="{{route('eventos')}}">
                 <div id="index_s3_verevetos">
                     Ver eventos
                 </div>

@@ -17,7 +17,7 @@
 <body>
     <nav>
         <div id="nav_logo_div">
-            <a href="index.html">
+            <a href="{{route('index')}}">
                 <img src="{{asset('img/LightHorizontal.png')}}">
             </a>
         </div>
@@ -27,19 +27,19 @@
                     <a class="content_nav nav_widescreen" href="https://wordpress.g6.dwm202425.online/">
                         <p>Loja</p>
                     </a>
-                    <a class="content_nav nav_widescreen" href="eventos.html">
+                    <a class="content_nav nav_widescreen" href="{{route('eventos')}}">
                         <p>Eventos</p>
                     </a>
-                    <a class="content_nav nav_widescreen" href="modalidades.html">
+                    <a class="content_nav nav_widescreen" href="">
                         <p>Modalidades</p>
                     </a>
-                    <a class="content_nav nav_widescreen" href="calendario.html">
+                    <a class="content_nav nav_widescreen" href="{{route('calendario')}}">
                         <p>Calendário</p>
                     </a>
-                    <a class="content_nav nav_widescreen" href="contactos.html">
+                    <a class="content_nav nav_widescreen" href="{{route('contactos')}}">
                         <p>Contactos</p>
                     </a>
-                    <a class="content_nav nav_widescreen" href="sobrenos.html">
+                    <a class="content_nav nav_widescreen" href="">
                         <p>Sobre Nós</p>
                     </a>
                     <a class="content_nav nav_widescreen" id="nav_login" href="login.html">
@@ -57,22 +57,22 @@
                     <a class="nav_responsive" href="https://wordpress.g6.dwm202425.online/">
                         <p>Loja</p>
                     </a>
-                    <a class="nav_responsive" href="eventos.html">
+                    <a class="nav_responsive" href="{{route('eventos')}}">
                         <p>Eventos</p>
                     </a>
-                    <a class="nav_responsive" href="modalidades.html">
+                    <a class="nav_responsive" href="">
                         <p>Modalidades</p>
                     </a>
-                    <a class="nav_responsive" href="calendario.html">
+                    <a class="nav_responsive" href="{{route('calendario')}}">
                         <p>Calendário</p>
                     </a>
-                    <a class="nav_responsive" href="contactos.html">
+                    <a class="nav_responsive" href="{{route('contactos')}}">
                         <p>Contactos</p>
                     </a>
-                    <a class="nav_responsive" href="sobrenos.html">
+                    <a class="nav_responsive" href="">
                         <p>Sobre Nós</p>
                     </a>
-                    <a class="nav_responsive" href="login.html">
+                    <a class="nav_responsive" href="">
                         <p>Log in</p>
                     </a>
                 </div>
