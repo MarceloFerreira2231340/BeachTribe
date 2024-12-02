@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PageController;
+use illuminate\support\facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,8 +15,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-use App\Http\Controllers\PageController;
-
 Route::get('/', [PageController::class, 'index'])->name('index');
 
 Route::get('/calendario', [PageController::class, 'calendarioDeAulas'])->name('calendario');
@@ -25,3 +25,10 @@ Route::get('/contactos', [PageController::class, 'contactos'])->name('contactos'
 
 Route::get('/surf', [PageController::class, 'surf'])->name('surf');
 
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::get('/admin',
+      [PageController::class, 'dashboard'])->name('admin');
