@@ -13,9 +13,9 @@ return new class extends Migration
     {
         Schema::create('aboutus', function (Blueprint $table) {
             $table->id();
-            $table->string('description',360);
-            $table->string('title',255);
-            $table->string('location',50);
+            $table->string('description',360)->notNullable();
+            $table->string('title',255)->notNullable();
+            $table->string('location',50)->notNullable();
             $table->timestamps();
         });
     }
