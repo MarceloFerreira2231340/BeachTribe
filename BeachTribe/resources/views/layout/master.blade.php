@@ -7,9 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>@yield('title')</title>
-    
+
     @yield('styles')
-    
+
     @yield('scripts')
 
 </head>
@@ -42,7 +42,7 @@
                     <a class="content_nav nav_widescreen" href="">
                         <p>Sobre Nós</p>
                     </a>
-                    <a class="content_nav nav_widescreen" id="nav_login" href="login.html">
+                    <a class="content_nav nav_widescreen" id="nav_login" href="{{route('login')}}">
                         <p class="nav_widescreen">Log in</p>
                     <img id="login_logo" class="nav_widescreen" src="{{asset('img/login_logo.png')}}">
                     </a>
@@ -72,7 +72,7 @@
                     <a class="nav_responsive" href="">
                         <p>Sobre Nós</p>
                     </a>
-                    <a class="nav_responsive" href="">
+                    <a class="nav_responsive" href="{{route('login')}}">
                         <p>Log in</p>
                     </a>
                 </div>
