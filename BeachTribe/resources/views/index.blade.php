@@ -3,7 +3,7 @@
 
 @section('styles')
 <link rel="stylesheet" href="{{asset('css/normalize.css')}}">
-<link rel="stylesheet" href="{{asset('css/Dinis/style.css')}}">
+<link rel="stylesheet" href="{{asset('css/Dinis/style.css?v=1.0')}}">
 <link rel="website icon" type="image/apng" href="img/Dinis/DarkSolo.png">
 <link rel="stylesheet" href="https://use.typekit.net/oov2wcw.css">
 @endsection
@@ -18,7 +18,6 @@
             <h5>Por uma vida mais ativa e saudável.</h5>
             <img src="img/Dinis/bannerIndex.jpg" id="index_banner_image">
         </section>
-
 
 
         <section id="index_section1">
@@ -150,7 +149,7 @@
             </a>
         </section>
 
-        
+
 
         <section id="index_section5">
                 <div id="index_s5_form_area">

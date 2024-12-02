@@ -140,7 +140,7 @@ nav{
 #dropdownIcon2{
     display: none;
 }
-  
+
 .dropdown-content{
     display: none;
     width: 100%;
@@ -238,7 +238,7 @@ footer{
     text-decoration: none;
     transition: 0.2s;
     margin-left: 10px;
-    
+
 }
 
 .content_footer p{
@@ -393,7 +393,7 @@ nav{
 #dropdownIcon2{
     display: none;
 }
-  
+
 .dropdown-content{
     display: none;
     position: absolute;
@@ -470,7 +470,7 @@ footer{
     text-decoration: none;
     transition: 0.2s;
     margin-left: 10px;
-    
+
 }
 
 .content_footer:hover p{
@@ -902,7 +902,7 @@ footer{
     width: 350px;
     font-size: 14pt;
     filter: drop-shadow(0 0 50px black);
-    
+
 }
 
 #index_s5_close{
@@ -917,7 +917,7 @@ footer{
 
 
 @media(max-width: 1100px){
-    
+
     .index_banner_title{
         width: 200px;
     }
@@ -993,7 +993,7 @@ footer{
     }
 
 
-    
+
     #index_s4_area{
         width: 400px;
         margin: 0 auto;
@@ -1028,13 +1028,13 @@ footer{
     }
 
 
-    
+
     .index_s3_cards{
         width: 100%;
         margin: 25px 0 25px 0;
         border-radius: 0;
     }
-    
+
     .index_s3_cards img{
         border-top-left-radius: 0;
     }
@@ -1087,3 +1087,4 @@ footer{
         margin: 0 10px;
     }
 }
+    
