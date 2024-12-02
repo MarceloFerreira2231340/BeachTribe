@@ -2,7 +2,7 @@
 @section('title', 'Calendário de Aulas')
 
 @section('styles')
-<link rel="stylesheet" href="{{('css/Marcelo/style.css')}}">
+<link rel="stylesheet" href="{{('css/Marcelo/style.css?v=1.0')}}">
     <link rel="stylesheet" href="{{('css/normalize.css')}}">
     <link href='https://fonts.googleapis.com/css?family=IBM%20Plex%20Mono' rel='stylesheet'>
     <link rel="preconnect" href="https://fonts.googleapis.com">

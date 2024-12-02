@@ -3,7 +3,7 @@
 
 @section('styles')
 <link rel="stylesheet" href="{{asset('css/normalize.css')}}">
-<link rel="stylesheet" href="{{asset('css/Carolina/style.css')}}">
+<link rel="stylesheet" href="{{asset('css/Carolina/style.css?v=1.0')}}">
         <link rel="stylesheet" href="https://use.typekit.net/oov2wcw.css">
 
 <!-- Favicon-->

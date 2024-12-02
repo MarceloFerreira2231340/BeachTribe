@@ -3,7 +3,7 @@
 
 @section('styles')
 <link rel="stylesheet" href="{{asset('css/normalize.')}}">
-<link rel="stylesheet" href="{{asset('css/Samuel/style.css')}}">
+<link rel="stylesheet" href="{{asset('css/Samuel/style.css?v=1.0')}}">
 <link rel="website icon" type="image/apng" href="img/DarkSolo.png">
 <link rel="stylesheet" href="https://use.typekit.net/oov2wcw.css">
 @endsection
