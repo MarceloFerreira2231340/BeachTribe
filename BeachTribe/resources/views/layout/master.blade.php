@@ -80,6 +80,8 @@
         </div>
     </nav>
     <div id="nav_spacer"></div>
+    <script src="{{asset('js/dropdown_animation.js')}}"></script>
+    <script src="{{asset('js/login_animation.js')}}"></script>
 
 <section>
     @yield('content')
