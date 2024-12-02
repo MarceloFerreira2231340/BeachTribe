@@ -24,7 +24,7 @@
         <div id="nav_section">
             <div id="nav_main">
                 <div id="nav_aaa">
-                    <a class="content_nav nav_widescreen" href="https://wordpress.g6.dwm202425.online/">
+                    <a class="content_nav nav_widescreen" href="https://wordpress.g6.dwm202425.online/loja/">
                         <p>Loja</p>
                     </a>
                     <a class="content_nav nav_widescreen" href="{{route('eventos')}}">
@@ -54,7 +54,7 @@
             </div>
             <div class="content_nav dropdown">
                 <div class="dropdown-content">
-                    <a class="nav_responsive" href="https://wordpress.g6.dwm202425.online/">
+                    <a class="nav_responsive" href="https://wordpress.g6.dwm202425.online/loja/">
                         <p>Loja</p>
                     </a>
                     <a class="nav_responsive" href="{{route('eventos')}}">
@@ -88,7 +88,7 @@
     <footer>
         <div id="footer_body">
             <div id="footer_section1">
-                <a class="content_footer" id="title_footer" href="https://wordpress.g6.dwm202425.online/">
+                <a class="content_footer" id="title_footer" href="https://wordpress.g6.dwm202425.online/loja/">
                     <p>Loja</p>
                 </a>
                 <div id="footer_line1"></div>
