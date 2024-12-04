@@ -43,7 +43,11 @@
                         <p>Sobre Nós</p>
                     </a>
                     <a class="content_nav nav_widescreen" id="nav_login" href="{{route('login')}}">
-                        <p class="nav_widescreen">Log in</p>
+                    @if(Auth::check())
+                        <p>{{ Auth::user()->name }}</p>
+                    @else
+                    <p class="nav_widescreen">Log in</p>
+                    @endif
                     <img id="login_logo" class="nav_widescreen" src="{{asset('img/login_logo.png')}}">
                     </a>
                 </div>
