@@ -77,7 +77,11 @@
                         <p>Sobre Nós</p>
                     </a>
                     <a class="nav_responsive" href="{{route('login')}}">
+                        @if(Auth::check())
+                        <p>{{ Auth::user()->name }}</p>
+                    @else
                         <p>Log in</p>
+                    @endif
                     </a>
                 </div>
             </div>
