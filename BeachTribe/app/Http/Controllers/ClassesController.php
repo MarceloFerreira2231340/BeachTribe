@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Classes;
+use App\Models\Class_;
 use Illuminate\Http\Request;
 
 class ClassesController extends Controller
@@ -34,7 +34,7 @@ class ClassesController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Classes $classes)
+    public function show(Class_ $classes)
     {
         //
     }
@@ -42,7 +42,7 @@ class ClassesController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Classes $classes)
+    public function edit(Class_ $classes)
     {
         //
     }
@@ -50,7 +50,7 @@ class ClassesController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Classes $classes)
+    public function update(Request $request, Class_ $classes)
     {
         //
     }
@@ -58,7 +58,7 @@ class ClassesController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Classes $classes)
+    public function destroy(Class_ $classes)
     {
         //
     }

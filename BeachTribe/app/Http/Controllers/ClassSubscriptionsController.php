@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\ClassSubscriptions;
+use App\Models\ClassSubscription;
 use Illuminate\Http\Request;
 
 class ClassSubscriptionsController extends Controller
@@ -34,7 +34,7 @@ class ClassSubscriptionsController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(ClassSubscriptions $classSubscriptions)
+    public function show(ClassSubscription $classSubscriptions)
     {
         //
     }
@@ -42,7 +42,7 @@ class ClassSubscriptionsController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(ClassSubscriptions $classSubscriptions)
+    public function edit(ClassSubscription $classSubscriptions)
     {
         //
     }
@@ -50,7 +50,7 @@ class ClassSubscriptionsController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, ClassSubscriptions $classSubscriptions)
+    public function update(Request $request, ClassSubscription $classSubscriptions)
     {
         //
     }
@@ -58,7 +58,7 @@ class ClassSubscriptionsController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(ClassSubscriptions $classSubscriptions)
+    public function destroy(ClassSubscription $classSubscriptions)
     {
         //
     }
