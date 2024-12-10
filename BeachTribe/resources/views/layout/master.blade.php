@@ -7,9 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>@yield('title')</title>
-
+    
     @yield('styles')
-
+    
     @yield('scripts')
 
 </head>
@@ -42,12 +42,8 @@
                     <a class="content_nav nav_widescreen" href="">
                         <p>Sobre Nós</p>
                     </a>
-                    <a class="content_nav nav_widescreen" id="nav_login" href="{{route('login')}}">
-                    @if(Auth::check())
-                        <p class="nav_widescreen">{{ Auth::user()->name }}</p>
-                    @else
+                    <a class="content_nav nav_widescreen" id="nav_login" href="login.html">
                         <p class="nav_widescreen">Log in</p>
-                    @endif
                     <img id="login_logo" class="nav_widescreen" src="{{asset('img/login_logo.png')}}">
                     </a>
                 </div>
@@ -76,20 +72,14 @@
                     <a class="nav_responsive" href="">
                         <p>Sobre Nós</p>
                     </a>
-                    <a class="nav_responsive" href="{{route('login')}}">
-                        @if(Auth::check())
-                        <p>{{ Auth::user()->name }}</p>
-                    @else
+                    <a class="nav_responsive" href="">
                         <p>Log in</p>
-                    @endif
                     </a>
                 </div>
             </div>
         </div>
     </nav>
     <div id="nav_spacer"></div>
-    <script src="{{asset('js/dropdown_animation.js')}}"></script>
-    <script src="{{asset('js/login_animation.js')}}"></script>
 
 <section>
     @yield('content')

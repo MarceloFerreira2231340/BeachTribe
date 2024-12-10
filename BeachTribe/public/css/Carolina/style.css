@@ -43,14 +43,6 @@ nav{
     flex-direction: column;
 }
 
-#nav_main{
-    margin-left: 200px !important;
-}
-
-#nav_logo_div:hover{
-    cursor: pointer;
-}
-
 #nav_aaa{
     display: flex;
     flex-direction: row;

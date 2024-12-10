@@ -1,8 +1,5 @@
 <?php
 
-use Illuminate\Database\Migrations\Migration;
-use Illuminate\Database\Schema\Blueprint;
-use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
@@ -11,11 +8,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('aboutus', function (Blueprint $table) {
+        Schema::create('contactus', function (Blueprint $table) {
             $table->id();
-            $table->string('description',360)->notNullable();
-            $table->string('title',255)->notNullable();
-            $table->string('location',50)->notNullable();
+            $table->string('description',360);
+            $table->string('title',255);
+            $table->string('location',50);
             $table->timestamps();
         });
     }
@@ -26,5 +23,6 @@ return new class extends Migration
     public function down(): void
     {
         Schema::dropIfExists('aboutus');
+     
     }
 };
