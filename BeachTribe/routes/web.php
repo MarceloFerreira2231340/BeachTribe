@@ -26,10 +26,3 @@ Route::get('/contactos', [PageController::class, 'contactos'])->name('contactos'
 
 Route::get('/surf', [PageController::class, 'surf'])->name('surf');
 
-
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
-Route::get('/admin',
-      [PageController::class, 'dashboard'])->name('admin');

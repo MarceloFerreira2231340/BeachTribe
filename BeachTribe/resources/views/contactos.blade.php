@@ -3,7 +3,7 @@
 
 @section('styles')
 <link rel="stylesheet" href="{{asset('css/normalize.')}}">
-<link rel="stylesheet" href="{{asset('css/Samuel/style.css?v=1.0')}}">
+<link rel="stylesheet" href="{{asset('css/Samuel/style.css')}}">
 <link rel="website icon" type="image/apng" href="img/DarkSolo.png">
 <link rel="stylesheet" href="https://use.typekit.net/oov2wcw.css">
 @endsection
@@ -23,8 +23,8 @@
           <label for="email">Email:</label>
           <input type="email" id="email" name="email" required>
 
-          <label for="phone">Telefone:</label>
-          <input type="tel" id="phone" name="phone">
+          <label for="telefone">Telefone:</label>
+          <input type="telef" id="telefone" name="telefone">
 
           <label for="message">Mensagem:</label>
           <textarea id="message" name="message" required></textarea>

@@ -13,10 +13,8 @@ return new class extends Migration
     {
         Schema::create('class_subscriptions', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('users_id');
-            $table->foreign('users_id')->references('id')->on('users')->onDelete('cascade');
-            $table->unsignedBigInteger('classes_id');
             $table->foreign('classes_id')->references('id')->on('classes')->onDelete('cascade');
+            $table->foreign('users_id')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();
         });
     }
