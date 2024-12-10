@@ -31,35 +31,18 @@
     </div>
 
         <div class="sectionsEventsDisplay">
-            <div class="sectionEventsCards">
-                <img src="{{('img/Marcelo/eventosMarcelo/mw-1920.png')}}" alt="Banner da Carta">
-                <div class="sectionEventsCardsInfo">
-                    <div class="sectionEventsCardsTitle">Formação<br>Nadador Salvador</div>
-                    <div class="sectionEventsCardsDescricao">Aprenda a salvar pessoas em situações de urgência da
-                        forma correta.</div>
-                    <a href="#" class="sectionEventsCardsSaberMais"><span>Saber Mais</span></a>
-                </div>
-            </div>
 
+            @foreach($events as $event)
             <div class="sectionEventsCards">
                 <img src="{{('img/Marcelo/eventosMarcelo/Portugal-em-Festa.jpg')}}" alt="Banner da Carta">
                 <div class="sectionEventsCardsInfo">
                     <div class="sectionEventsCardsTitle">Música<br>Portugal em Festa</div>
-                    <div class="sectionEventsCardsDescricao">Aprenda a salvar pessoas em situações de urgência da
-                        forma correta.</div>
+                    <div class="sectionEventsCardsDescricao">{{ $event->description }}</div>
                     <a href="#" class="sectionEventsCardsSaberMais"><span>Saber Mais</span></a>
                 </div>
             </div>
+            @endforeach
 
-            <div class="sectionEventsCards">
-                <img src="{{('img/Marcelo/eventosMarcelo/LickV1BCT68Rbl8bVdOi.jpg')}}" alt="Banner da Carta">
-                <div class="sectionEventsCardsInfo">
-                    <div class="sectionEventsCardsTitle">Formação<br>Nadador Salvador</div>
-                    <div class="sectionEventsCardsDescricao">Aprenda a salvar pessoas em situações de urgência da
-                        forma correta.</div>
-                    <a href="#" class="sectionEventsCardsSaberMais"><span>Saber Mais</span></a>
-                </div>
-            </div>
         </div>
 
     </div>

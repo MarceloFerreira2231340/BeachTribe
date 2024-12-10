@@ -7,12 +7,15 @@ use Illuminate\Http\Request;
 
 class EventController extends Controller
 {
+
+
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        //
+        $events = Event::all();
+        return view('eventos', compact('events'));
     }
 
     /**

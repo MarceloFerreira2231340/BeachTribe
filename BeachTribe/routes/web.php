@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PageController;
 use illuminate\support\facades\Auth;
+use App\Http\Controllers\EventController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,7 +20,7 @@ Route::get('/', [PageController::class, 'index'])->name('index');
 
 Route::get('/calendario', [PageController::class, 'calendarioDeAulas'])->name('calendario');
 
-Route::get('/eventos', [PageController::class, 'eventos'])->name('eventos');
+Route::get('/eventos', [EventController::class, 'index'])->name('eventos');
 
 Route::get('/contactos', [PageController::class, 'contactos'])->name('contactos');
 
