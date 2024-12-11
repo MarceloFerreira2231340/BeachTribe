@@ -3,7 +3,7 @@
 
 @section('styles')
 <link rel="stylesheet" href="{{('css/Marcelo/style.css')}}">
-    <link rel="stylesheet" href="{{('css/Marcelo/normalize.css')}}">
+    <link rel="stylesheet" href="{{('css/Marcelo/normalize.css?v=1.0')}}">
     <link href='https://fonts.googleapis.com/css?family=IBM%20Plex%20Mono' rel='stylesheet'>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
