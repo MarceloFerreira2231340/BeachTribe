@@ -52,6 +52,10 @@ nav {
   margin-top: 10px;
 }
 
+#nav_main{
+    margin-left: 200px;
+}
+
 .content_nav {
   height: 80px;
   font-size: 14pt;

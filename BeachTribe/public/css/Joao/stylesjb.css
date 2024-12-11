@@ -13,7 +13,7 @@ footer {
 
 nav p,
 footer p {
-    font-family: var(--fonte);
+    font-family: var(--fonte) !important;
     color: var(--laranja);
     margin: 0;
     padding: 0;
@@ -50,6 +50,10 @@ nav {
     flex-direction: row;
     float: right;
     margin-top: 10px;
+}
+
+#nav_main{
+    margin-left: 200px;
 }
 
 .content_nav {

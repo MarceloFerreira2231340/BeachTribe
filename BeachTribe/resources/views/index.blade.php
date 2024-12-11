@@ -3,7 +3,7 @@
 
 @section('styles')
 <link rel="stylesheet" href="{{asset('css/normalize.css')}}">
-<link rel="stylesheet" href="{{asset('css/Dinis/style.css')}}">
+<link rel="stylesheet" href="{{asset('css/Dinis/style.css?=1.0')}}">
 <link rel="website icon" type="image/apng" href="img/Dinis/DarkSolo.png">
 <link rel="stylesheet" href="https://use.typekit.net/oov2wcw.css">
 @endsection
