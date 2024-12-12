@@ -19,8 +19,10 @@ return new class extends Migration
             $table->string('location', 120)->notNullable(); 
             $table->date('date')->notNullable();
             $table->integer('duration')->notNullable();
+
             $table->unsignedBigInteger('sports_id');
             $table->foreign('sports_id')->references('id')->on('sports')->onDelete('cascade');
+            
             $table->timestamps();
         });
     }

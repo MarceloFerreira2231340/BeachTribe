@@ -5,6 +5,12 @@ use App\Http\Controllers\PageController;
 use illuminate\support\facades\Auth;
 use App\Http\Controllers\EventController;
 
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\ProjectController;
+use App\Http\Controllers\UcController;
+use App\Http\Controllers\DocenteController;
+use App\Http\Controllers\CategoryController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -26,3 +32,8 @@ Route::get('/contactos', [PageController::class, 'contactos'])->name('contactos'
 
 Route::get('/surf', [PageController::class, 'surf'])->name('surf');
 
+
+
+
+
+Route::get('admin/', [PageController::class, 'admindashboard'])->name('admin.dashboard');

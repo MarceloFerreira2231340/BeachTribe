@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\ClassSubscription;
 use Illuminate\Http\Request;
 
-class ClassSubscriptionsController extends Controller
+class ClassSubscriptionController extends Controller
 {
     /**
      * Display a listing of the resource.

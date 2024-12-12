@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Sport;
 use Illuminate\Http\Request;
 
-class SportsController extends Controller
+class SportController extends Controller
 {
     /**
      * Display a listing of the resource.

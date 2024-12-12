@@ -31,8 +31,8 @@
         <ul class="navbar-nav dark sidebar sidebar-dark accordion" id="accordionSidebar">
 
             <!-- Sidebar - Brand -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/admin">
-                <img src="{{ asset('img/logo.png') }}" alt="" class="img-fluid">
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" style="height:100px;" href="/admin">
+                <img src="{{ asset('img/SoloWhite.png') }}" style="height:80px;" alt="" class="img-fluid">
             </a>
 
             <!-- Divider -->
@@ -51,20 +51,77 @@
 
             <!-- Nav Item - Pages Collapse Menu -->
             <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUsers"
-                    aria-expanded="true" aria-controls="collapseUsers">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUsers" aria-expanded="true" aria-controls="collapseUsers">
                     <i class="fas fa-users"></i>
                     <span>Utilizadores</span>
                 </a>
                 <div id="collapseUsers" class="collapse" aria-labelledby="headingUsers" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-
-                        <a class="collapse-item" href="#">Listagem</a>
+                        <a class="collapse-item" href="#">Ver Utilizadores</a>
                         <a class="collapse-item" href="#">Novo Utilizador</a>
                     </div>
                 </div>
             </li>
-            <!-- Nav Item - Pages Collapse Menu -->
+
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseClasses" aria-expanded="true" aria-controls="collapseClasses">
+                    <i class="fas fa-book"></i>
+                    <span>Aulas</span>
+                </a>
+                <div id="collapseClasses" class="collapse" aria-labelledby="headingClasses" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <a class="collapse-item" href="#">Ver Aulas</a>
+                        <a class="collapse-item" href="#">Nova Aula</a>
+                    </div>
+                </div>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseSports" aria-expanded="true" aria-controls="collapseSports">
+                    <i class="fas fa-walking"></i>
+                    <span>Atividades</span>
+                </a>
+                <div id="collapseSports" class="collapse" aria-labelledby="headingSports" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <a class="collapse-item" href="#">Ver Atividades</a>
+                        <a class="collapse-item" href="#">Nova Atividade</a>
+                    </div>
+                </div>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseEventos"
+                    aria-expanded="true" aria-controls="collapseEventos">
+                    <i class="fas fa-calendar-alt"></i>
+                    <span>Eventos</span>
+                </a>
+                <div id="collapseEventos" class="collapse" aria-labelledby="headingEventos" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+
+                        <a class="collapse-item" href="#">Ver Eventos</a>
+                        <a class="collapse-item" href="#">Novo Evento</a>
+                    </div>
+                </div>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseContactos"
+                    aria-expanded="true" aria-controls="collapseContactos">
+                    <i class="fas fa-address-book"></i>
+                    <span>Contactos</span>
+                </a>
+                <div id="collapseContactos" class="collapse" aria-labelledby="headingContactos" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+
+                        <a class="collapse-item" href="#">Ver Contactos</a>
+                        <a class="collapse-item" href="#">Novo Contacto</a>
+                    </div>
+                </div>
+            </li>
+
+            <!--
+
+            Nav Item - Pages Collapse Menu
             <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePosts"
                     aria-expanded="true" aria-controls="collapsePosts">
@@ -83,6 +140,8 @@
                     </div>
                 </div>
             </li>
+
+            -->
 
 
             <!-- Divider -->
@@ -147,7 +206,16 @@
                 <!-- End of Topbar -->
 
                 <!-- Begin Page Content -->
-                @yield('content')
+                <div class="container-fluid">
+                    @if ($errors->any())
+                        @include ('layout.partials.error')
+                    @endif
+                    @if (!empty(session('success')))
+                        @include ('layout.partials.success')
+                    @endif
+                </div>
+
+                @yield("content")
 
 
             </div>
@@ -186,12 +254,11 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    Clique no botão "Logout" se confirma que pretende terminar a sua sessão nesta
-                    página.
+                    Clique no botão "Logout" se confirma que pretende terminar a sua sessão nesta página.
                 </div>
                 <div class="modal-footer">
                     <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancelar</button>
-                    <form action="{{ route('logout') }}" method="post" class="inline">
+                    <form action="#" method="post" class="inline">
                         @csrf
                         <button class="btn btn-primary" type="submit">Logout</button>
                     </form>
