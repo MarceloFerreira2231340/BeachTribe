@@ -12,16 +12,18 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('classes', function (Blueprint $table) {
-            $table->id(); // Chave primária auto_increment
-            $table->enum('type', ['Advanced', 'Medium', 'Beginner'])->notNullable();
+            $table->id();
+            $table->enum('type', ['A', 'M', 'B'])->default('M')->notNullable();
             $table->string('title', 120)->notNullable();
-            $table->enum('state', ['active', 'hidden'])->default('hidden')->notNullable();
+            $table->enum('state', ['A', 'H'])->default('H')->notNullable();
             $table->string('location', 120)->notNullable(); 
-            $table->date('date')->notNullable();
+            // $table->date('date')->notNullable();
             $table->integer('duration')->notNullable();
 
+            /*
             $table->unsignedBigInteger('sports_id');
             $table->foreign('sports_id')->references('id')->on('sports')->onDelete('cascade');
+            */
             
             $table->timestamps();
         });

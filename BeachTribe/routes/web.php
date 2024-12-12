@@ -3,13 +3,13 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PageController;
 use illuminate\support\facades\Auth;
-use App\Http\Controllers\EventController;
 
 use App\Http\Controllers\UserController;
-use App\Http\Controllers\ProjectController;
-use App\Http\Controllers\UcController;
-use App\Http\Controllers\DocenteController;
-use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\ClassController;
+use App\Http\Controllers\SportController;
+use App\Http\Controllers\EventController;
+use App\Http\Controllers\ContactsController;
+use App\Http\Controllers\AboutUsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -37,3 +37,17 @@ Route::get('/surf', [PageController::class, 'surf'])->name('surf');
 
 
 Route::get('admin/', [PageController::class, 'admindashboard'])->name('admin.dashboard');
+
+
+
+Route::resource('admin/users', UserController::class, ['as' => 'admin']);
+
+Route::resource('admin/classes', ClassController::class, ['as' => 'admin']);
+
+Route::resource('admin/sports', SportController::class, ['as' => 'admin']);
+
+Route::resource('admin/events', EventController::class, ['as' => 'admin']);
+
+Route::resource('admin/contacts', ContactsController::class, ['as' => 'admin']);
+
+Route::resource('admin/aboutus', AboutUsController::class, ['as' => 'admin']);

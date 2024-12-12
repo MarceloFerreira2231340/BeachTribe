@@ -20,7 +20,11 @@ class User extends Authenticatable
     protected $fillable = [
         'name',
         'email',
+        'tipo',
         'password',
+        'phone',
+        //'data_nasc',
+        'address',
     ];
 
     /**
@@ -42,4 +46,13 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+
+    public function roleToStr() 
+    {
+        switch($this->tipo)
+        {
+            case 'C': return 'Cliente';
+            case 'A': return 'Administrador';
+        }
+    }
 }

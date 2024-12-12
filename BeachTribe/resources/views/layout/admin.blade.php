@@ -57,8 +57,8 @@
                 </a>
                 <div id="collapseUsers" class="collapse" aria-labelledby="headingUsers" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="#">Ver Utilizadores</a>
-                        <a class="collapse-item" href="#">Novo Utilizador</a>
+                        <a class="collapse-item" href="{{ route('admin.users.index') }}">Ver Utilizadores</a>
+                        <a class="collapse-item" href="{{ route('admin.users.create') }}">Novo Utilizador</a>
                     </div>
                 </div>
             </li>
@@ -71,7 +71,7 @@
                 <div id="collapseClasses" class="collapse" aria-labelledby="headingClasses" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <a class="collapse-item" href="#">Ver Aulas</a>
-                        <a class="collapse-item" href="#">Nova Aula</a>
+                        <a class="collapse-item" href="{{ route('admin.classes.create') }}">Nova Aula</a>
                     </div>
                 </div>
             </li>
@@ -79,12 +79,12 @@
             <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseSports" aria-expanded="true" aria-controls="collapseSports">
                     <i class="fas fa-walking"></i>
-                    <span>Atividades</span>
+                    <span>Modalidades</span>
                 </a>
                 <div id="collapseSports" class="collapse" aria-labelledby="headingSports" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="#">Ver Atividades</a>
-                        <a class="collapse-item" href="#">Nova Atividade</a>
+                        <a class="collapse-item" href="#">Ver Modalidades</a>
+                        <a class="collapse-item" href="#">Nova Modalidade</a>
                     </div>
                 </div>
             </li>
@@ -97,7 +97,6 @@
                 </a>
                 <div id="collapseEventos" class="collapse" aria-labelledby="headingEventos" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-
                         <a class="collapse-item" href="#">Ver Eventos</a>
                         <a class="collapse-item" href="#">Novo Evento</a>
                     </div>
@@ -108,13 +107,26 @@
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseContactos"
                     aria-expanded="true" aria-controls="collapseContactos">
                     <i class="fas fa-address-book"></i>
-                    <span>Contactos</span>
+                    <span>Registo de Contactos</span>
                 </a>
                 <div id="collapseContactos" class="collapse" aria-labelledby="headingContactos" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-
-                        <a class="collapse-item" href="#">Ver Contactos</a>
+                        <a class="collapse-item" href="#">Ver Registo de Contactos</a>
                         <a class="collapse-item" href="#">Novo Contacto</a>
+                    </div>
+                </div>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseAboutUs"
+                    aria-expanded="true" aria-controls="collapseAboutUs">
+                    <i class="fas fa-address-book"></i>
+                    <span>Sobre Nós</span>
+                </a>
+                <div id="collapseAboutUs" class="collapse" aria-labelledby="headingAboutUs" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <a class="collapse-item" href="#">Ver Sobre Nós</a>
+                        <a class="collapse-item" href="#">Novo Sobre Nós</a>
                     </div>
                 </div>
             </li>
@@ -181,8 +193,6 @@
                                     <span class="mr-2 d-none d-lg-inline text-gray-200 small">
                                         {{ Auth::user()->name }}
                                     </span>
-                                    <img class="img-profile rounded-circle" alt="Photo User"
-                                        src="{{ asset('img/default_user.jpg') }}">
                                 </a>
                                 <!-- Dropdown - User Information -->
                                 <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
