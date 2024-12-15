@@ -32,13 +32,7 @@ Route::get('/contactos', [PageController::class, 'contactos'])->name('contactos'
 
 Route::get('/surf', [PageController::class, 'surf'])->name('surf');
 
-
-
-
-
-Route::get('admin/', [PageController::class, 'admindashboard'])->name('admin.dashboard');
-
-
+Route::get('/admin', [PageController::class, 'admindashboard'])->name('admin.dashboard');
 
 Route::resource('admin/users', UserController::class, ['as' => 'admin']);
 
@@ -51,3 +45,7 @@ Route::resource('admin/events', EventController::class, ['as' => 'admin']);
 Route::resource('admin/contacts', ContactsController::class, ['as' => 'admin']);
 
 Route::resource('admin/aboutus', AboutUsController::class, ['as' => 'admin']);
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

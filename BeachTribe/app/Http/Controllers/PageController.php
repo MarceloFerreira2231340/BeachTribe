@@ -13,26 +13,26 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 
 class PageController extends Controller
-{   
+{
     public function index()
     {
-        return view('index'); 
+        return view('index');
     }
     public function calendarioDeAulas()
     {
-        return view('CalendarioDeAulas'); 
+        return view('CalendarioDeAulas');
     }
     public function contactos()
     {
-        return view('contactos'); 
+        return view('contactos');
     }
     public function surf()
     {
-        return view('surf'); 
+        return view('surf');
     }
     public function eventos()
     {
-        return view('eventos'); 
+        return view('eventos');
     }
 
     public function admindashboard() {
@@ -44,7 +44,7 @@ class PageController extends Controller
 
 
         //$count_classes_per_sport = Sport::withCount('classes')->get();
-        
+
         return view('_admin.dashboard', compact('count_classes', 'count_contacts', 'count_events', 'count_sports', 'count_users'/*, 'count_classes_per_sport'*/));
     }
 }

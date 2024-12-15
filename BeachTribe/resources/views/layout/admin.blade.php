@@ -268,7 +268,7 @@
                 </div>
                 <div class="modal-footer">
                     <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancelar</button>
-                    <form action="#" method="post" class="inline">
+                    <form id="logout-form" action="{{ route('logout') }}" method="post" class="inline">
                         @csrf
                         <button class="btn btn-primary" type="submit">Logout</button>
                     </form>

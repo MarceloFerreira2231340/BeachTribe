@@ -33,14 +33,16 @@
         <div class="sectionsEventsDisplay">
 
             @foreach($events as $event)
-            <div class="sectionEventsCards">
-                <img src="{{('img/Marcelo/eventosMarcelo/Portugal-em-Festa.jpg')}}" alt="Banner da Carta">
-                <div class="sectionEventsCardsInfo">
-                    <div class="sectionEventsCardsTitle">Música<br>Portugal em Festa</div>
-                    <div class="sectionEventsCardsDescricao">{{ $event->description }}</div>
-                    <a href="#" class="sectionEventsCardsSaberMais"><span>Saber Mais</span></a>
-                </div>
-            </div>
+                @if($event->state !== 'desativado')
+                    <div class="sectionEventsCards">
+                        <img src="{{('img/Marcelo/eventosMarcelo/Portugal-em-Festa.jpg')}}" alt="Banner da Carta">
+                        <div class="sectionEventsCardsInfo">
+                            <div class="sectionEventsCardsTitle">{{ $event->type}} -<br>{{ $event->title}}</div>
+                            <div class="sectionEventsCardsDescricao">{{ $event->description }}</div>
+                            <a href="#" class="sectionEventsCardsSaberMais"><span>Saber Mais</span></a>
+                        </div>
+                    </div>
+                @endif
             @endforeach
 
         </div>
