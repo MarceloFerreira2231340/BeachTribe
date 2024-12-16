@@ -5,18 +5,10 @@ namespace App\Http\Controllers;
 use App\Models\Class_;
 use App\Http\Requests\ClassRequest;
 use Illuminate\Http\Request;
+use carbon\carbon;
 
 class ClassController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
-    public function calendarioDeAulas()
-    {
-        $classes = Class_::all();
-        return view('calendario', compact('classes'));
-    }
-
     /**
      * Display a listing of the resource.
      */
@@ -90,4 +82,23 @@ class ClassController extends Controller
         return redirect()->route('admin.classes.index')
             ->with('success', 'Aula eliminada com sucesso');
     }
+
+        /**
+     * Display a listing of the resource.
+     */
+
+     public function calendario()
+     {
+         // Recupera as aulas, com o campo 'date' e outras informações.
+         $classes = Class_::where('state', 'A') // Adicionando condição para pegar apenas as aulas ativas.
+             ->orderBy('date', 'asc') // Ordena pelo campo 'date'
+             ->get(); // Obtém todos os registros
+     
+         return view('CalendarioDeAulas', compact('classes'));
+     }
+     
 }
+
+     
+
+

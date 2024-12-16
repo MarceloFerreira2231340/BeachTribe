@@ -15,7 +15,7 @@ class Class_ extends Model
         'title',
         'state',
         'location',
-        //'date',
+        'date',
         'duration',
     ];
 

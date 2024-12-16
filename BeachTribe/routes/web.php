@@ -24,7 +24,7 @@ use App\Http\Controllers\AboutUsController;
 
 Route::get('/', [PageController::class, 'index'])->name('index');
 
-Route::get('/calendario', [PageController::class, 'calendarioDeAulas'])->name('calendario');
+Route::get('/calendario', [ClassController::class, 'calendario'])->name('calendario');
 
 Route::get('/eventos', [EventController::class, 'index'])->name('eventos');
 

@@ -72,18 +72,6 @@
 
         <section id="index_section3">
             <div id="index_s3_area">
-
-                @foreach($events->take(3) as $event)
-                <div class="index_s3_cards">
-                    <img src="{{ $path.$event->image }}">
-                    <div class="index_s3_textarea">
-                        <h4>{{ $event->title }}</h4>
-                        <p>{{ $event->description }}</p>
-                    </div>
-                </div>
-                @endforeach
-                <!--
-
                 <div class="index_s3_cards">
                     <img src="img/Dinis/indexEvento1.webp">
                     <div class="index_s3_textarea">
@@ -91,7 +79,6 @@
                         <p>Aprenda a salvar pessoas em situações de urgência da forma correta.</p>
                     </div>
                 </div>
-
                 <div class="index_s3_cards">
                     <img src="img/Dinis/indexEvento2.jpg">
                     <div class="index_s3_textarea">
@@ -99,7 +86,6 @@
                         <p>Faça parte desta experiência única no dia 29 de Junho na praia do Pedrogão.</p>
                     </div>
                 </div>
-
                 <div class="index_s3_cards" id="index_s3_card3">
                     <img src="img/Dinis/indexEvento3.png">
                     <div class="index_s3_textarea" id="index_s3_card3">
@@ -107,9 +93,6 @@
                         <p>Veja o espetáculo da estrela nacional no dia 28 de Junho na Praia da Nazaré.</p>
                     </div>
                 </div>
-
-                -->
-
             </div>
             <a href="{{route('eventos')}}">
                 <div id="index_s3_verevetos">

@@ -16,9 +16,7 @@ class PageController extends Controller
 {
     public function index()
     {
-        $events = Event::all();
-        $path = "img/Marcelo/eventosMarcelo/";
-        return view('index', compact('events', 'path'));
+        return view('index');
     }
     public function calendarioDeAulas()
     {
