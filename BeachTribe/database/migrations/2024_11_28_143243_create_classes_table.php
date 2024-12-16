@@ -17,8 +17,7 @@ return new class extends Migration
             $table->string('title', 120)->notNullable();
             $table->enum('state', ['A', 'H'])->default('H')->notNullable();
             $table->string('location', 120)->notNullable(); 
-            $table->date('date')->notNullable();
-            $table->decimal('price', 8, 2)->default(0.00)->notNullable(); 
+            // $table->date('date')->notNullable();
             $table->integer('duration')->notNullable();
 
             /*

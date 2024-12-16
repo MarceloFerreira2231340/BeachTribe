@@ -53,7 +53,7 @@
         <div class="row gy-4">
             <div class="col-md-4">
                 <img src="{{ asset('img/Carolina/surfing.png')}}" alt="Aulas de Surf">
-                <img src="{{ asset('img/Carolina/surfing.png') }}" alt="Aulas de Surf">
+                <h4>Aulas de Surf</h4>
                 <p>Aulas de Surf para todas as idades. Aprenda a surfar connosco, divertimento garantido!</p>
             </div>
             <div class="col-md-4">
