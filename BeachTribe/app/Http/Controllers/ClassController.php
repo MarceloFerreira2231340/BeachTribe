@@ -11,6 +11,15 @@ class ClassController extends Controller
     /**
      * Display a listing of the resource.
      */
+    public function calendarioDeAulas()
+    {
+        $classes = Class_::all();
+        return view('calendario', compact('classes'));
+    }
+
+    /**
+     * Display a listing of the resource.
+     */
     public function index()
     {
         $classes = Class_::all();
