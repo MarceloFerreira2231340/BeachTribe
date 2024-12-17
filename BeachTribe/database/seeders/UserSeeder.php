@@ -17,7 +17,7 @@ class UserSeeder extends Seeder
 
             [
                 "name" => 'Carolina',
-                "email"=>'2231378@my.ipleiria.pt',
+                "email"=> '2231378@my.ipleiria.pt',
                 "password" => '$2y$12$H721hzcP85rWpz.s9xbpN.JSxSdx0p8RrlNkt3DytlzKZkDEwbc5u',
                 "phone" => NULL,
                 "address" => NULL,
@@ -27,7 +27,7 @@ class UserSeeder extends Seeder
             ],
             [
                 "name" => 'Dinis',
-                "email"=>'2231338@my.ipleiria.pt',
+                "email"=> '2231338@my.ipleiria.pt',
                 "password" => '$2y$12$arl0YeMW2WchZFNLaaquGeb2icaN5BfWOfCso7KheWRrHDk/xm1hK',
                 "phone" => NULL,
                 "address" => NULL,
@@ -37,7 +37,7 @@ class UserSeeder extends Seeder
             ],
             [
                 "name" => 'João',
-                "email"=>'2223235@my.ipleiria.pt',
+                "email"=> '2223235@my.ipleiria.pt',
                 "password" => '$2y$12$C16TSDbq8BUDBS3EzgK92Ojer/dSfqSv35d8D3n0F9vqTsrBsCpw6',
                 "phone" => NULL,
                 "address" => NULL,
@@ -47,7 +47,7 @@ class UserSeeder extends Seeder
             ],
             [
                 "name" => 'Marcelo',
-                "email"=>'2231340@my.ipleiria.pt',
+                "email"=> '2231340@my.ipleiria.pt',
                 "password" => '$2y$12$gYjfiz1yPg8mpinr9IVMtuz/XFpp4OrrtcLSloO2SQZvD88r4BfVS',
                 "phone" => NULL,
                 "address" => NULL,
@@ -57,7 +57,7 @@ class UserSeeder extends Seeder
             ],
             [
                 "name" => 'Samuel',
-                "email"=>'2220841@my.ipleiria.pt',
+                "email"=> '2220841@my.ipleiria.pt',
                 "password" => '$2y$12$jZFDcpBjmcgUW6zG.KvozOjCjcxWrNz3.Tcw2jfpymhyS1UeMwEbO',
                 "phone" => NULL,
                 "address" => NULL,
@@ -70,10 +70,32 @@ class UserSeeder extends Seeder
             
             [
                 "name" => 'Felipe Pino',
-                "email"=>'felipe.pino@gmail.com',
+                "email"=> 'felipe.pino@gmail.com',
                 "password" => '',
                 "phone" => '923547681',
                 "address" => '2001-650, Rua do Pino, Guimarães',
+                "tipo" => 'C',
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+            ],
+            
+            [
+                "name" => 'Gustavo Lima',
+                "email"=> 'gustavo.lima@gmail.com',
+                "password" => '$2y$12$jZFDcpBjmcgUW6zG.KvozOjCjcxWrNz3.Tcw2jfpymhyS1UeMwEbO',
+                "phone" => '912345678',
+                "address" => '1001-123, Rua da Favela, Minas Gerais',
+                "tipo" => 'C',
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+            ],
+            
+            [
+                "name" => 'João Parente',
+                "email"=> '2231371@my.ipleiria.pt',
+                "password" => '$2y$12$jZFDcpBjmcgUW6zG.KvozOjCjcxWrNz3.Tcw2jfpymhyS1UeMwEbO',
+                "phone" => '912775739',
+                "address" => '175 Av. Gen. Humberto Delgado',
                 "tipo" => 'C',
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now(),
