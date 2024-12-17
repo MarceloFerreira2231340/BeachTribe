@@ -87,6 +87,8 @@
             </div>
         </div>
     </nav>
+    <script src="{{asset('js/login_animation.js')}}"></script>
+    <script src="{{asset('js/dropdown_animation.js')}}"></script>
     <div id="nav_spacer"></div>
 
 <section>
