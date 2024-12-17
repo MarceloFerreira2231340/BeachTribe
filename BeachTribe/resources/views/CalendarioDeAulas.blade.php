@@ -11,21 +11,22 @@
 @endsection
 
 @section('content')
+
     <div class="intro">
         <h1><b>Calendário de Aulas</b></h1>
         <h3>Aqui podes consultar as aulas e os horários disponíveis durante o mês</h3>
     </div>
-
+<div class="">
     @foreach($classes as $class)
         <div class="fix">
             <div class="tltmes">
-                <h2>{{ date('F, Y', strtotime($class->date)) }}</h2> <!-- Exibe o mês e ano -->
+                <h2>{{ date('F, Y', strtotime($class->date)) }}</h2> 
             </div>
 
             <div class="border rounded shadow-sm cardaula">
                 <div class="areadate">
-                    <h2>{{ date('D', strtotime($class->date)) }}</h2> <!-- Exibe o dia da semana -->
-                    <h1>{{ date('d', strtotime($class->date)) }}</h1> <!-- Exibe o dia do mês -->
+                    <h2>{{ date('D', strtotime($class->date)) }}</h2> 
+                    <h1>{{ date('d', strtotime($class->date)) }}</h1>
                 </div>
 
                 <div class="vr"></div>
@@ -48,7 +49,7 @@
                     </div>
                     <div class="price">
                         <i class="bi bi-wallet-fill"></i>
-                        <p>{{ number_format($class->price, 2, ',', '.') }}€</p> <!-- Exibe o preço -->
+                        <p>{{ number_format($class->price, 2, ',', '.') }}€</p>
                     </div>
                 </div>
 
@@ -58,6 +59,7 @@
             </div>
         </div>
     @endforeach
+</div>
 @endsection
 
 @section('scripts')

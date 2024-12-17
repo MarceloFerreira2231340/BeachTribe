@@ -19,17 +19,22 @@
         value="{{ old('location', $class_->location) }}" />
 </div>
 
-<!--
 <div class="form-group">
     <label for="inputDate">Data:</label>
-    <input type="datetime_local" class="form-control" name="date" id="inputDate"
+    <input type="date" class="form-control" name="date" id="inputDate"
         value="{{ old('date', $class_->date) }}" />
 </div>
--->
+
 
 <div class="form-group">
-    <label for="inputDuration">Duração:</label>
-    <input type="num" class="form-control" name="duration" id="inputDuration"
+    <label for="inputPrice">Preço (€):</label>
+    <input type="number" step="0.01" class="form-control" name="price" id="inputPrice"
+        value="{{ old('price', $class_->price) }}" />
+</div>
+
+<div class="form-group">
+    <label for="inputDuration">Duração (Horas):</label>
+    <input type="number" class="form-control" name="duration" id="inputDuration"
         value="{{ old('duration', $class_->duration) }}" />
 </div>
 

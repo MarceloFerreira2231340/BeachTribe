@@ -1,3 +1,9 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 :root {
     --azul: #60b0f4;
     --laranja: #f4a460;
@@ -285,11 +291,7 @@ footer {
 
 
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+
 
 .areacima {
     width: 100%;
@@ -449,7 +451,7 @@ footer {
     margin-left: 50px;
     margin-right: 50px;
     margin-bottom: 50px;
-    width: 1720px;
+    max-width: 90%;
     height: 160px;
     display: flex;
 }
