@@ -19,7 +19,7 @@ class EventSeeder extends Seeder
         $events = [
             [
                 'title' => 'Quim Barreiros',
-                'image' => 'festival_musica.jpg',
+                'image' => 'quimbarreiros.png',
                 'description' => 'Veja o espetáculo da estrela nacional Quim Barreiros',
                 'type' => 'Festivais',
                 'state' => 'ativado',
@@ -27,8 +27,8 @@ class EventSeeder extends Seeder
                 'date' => '2024-06-28 18:00:00',
             ],
             [
-                'title' => 'Formação de Surf',
-                'image' => 'formacao_surf.jpg',
+                'title' => 'Surf',
+                'image' => 'aulassurf.png',
                 'description' => 'Aprenda a surfar com os melhores instrutores das nossas praias.',
                 'type' => 'Formações',
                 'state' => 'ativado',
