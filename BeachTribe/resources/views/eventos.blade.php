@@ -35,7 +35,7 @@
             @foreach($events as $event)
                 @if($event->state !== 'desativado')
                     <div class="sectionEventsCards">
-                        <img src="{{('img/Marcelo/eventosMarcelo/{{$event->image}}')}}" alt="Banner da Carta">
+                        <img src="{{ asset('img/Marcelo/eventosMarcelo/' . $event->image) }}" alt="Banner da Carta">
                         <div class="sectionEventsCardsInfo">
                             <div class="sectionEventsCardsTitle">{{ $event->type}} -<br>{{ $event->title}}</div>
                             <div class="sectionEventsCardsDescricao">{{ $event->description }}</div>
@@ -44,8 +44,6 @@
                     </div>
                 @endif
             @endforeach
-
         </div>
-
     </div>
 @endsection
