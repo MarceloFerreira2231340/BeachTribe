@@ -24,25 +24,21 @@
 <div class="beachTribeEvents">
     <img src="{{('img/Marcelo/eventosMarcelo/mick-snap-banner.png')}}" alt="HeroImage">
     <div class="sectionEvents">
-        <div class="sectionEventsTitle">Eventos</div>
-        <div class="sectionEventsText">Aqui podes encontrar eventos que irão decorrer nas praias dos nossos
-            clubes!<br>Desde formações até concertos, há sempre algo interessante para participar.<br><br>Dirige-te
-            à praia mais próxima ou inscreve-te online!</div>
+        <div class="sectionEventsTitle">Modalidades</div>
+        <div class="sectionEventsText">Aqui podes encontrar as diversas modalidades que oferecemos nas praias dos nossos clubes!<br>Desde surf até voleibol de praia, há sempre algo interessante para praticar.<br><br>Escolhe a tua modalidade favorita e junta-te a nós!</div>
     </div>
 
         <div class="sectionsEventsDisplay">
 
-            @foreach($events as $event)
-                @if($event->state !== 'desativado')
+            @foreach($sports as $sport)
                     <div class="sectionEventsCards">
                         <img src="{{('img/Marcelo/eventosMarcelo/Portugal-em-Festa.jpg')}}" alt="Banner da Carta">
                         <div class="sectionEventsCardsInfo">
-                            <div class="sectionEventsCardsTitle">{{ $event->type}} -<br>{{ $event->title}}</div>
-                            <div class="sectionEventsCardsDescricao">{{ $event->description }}</div>
+                            <div class="sectionEventsCardsTitle">{{ $sport->title}}</div>
+                            <div class="sectionEventsCardsDescricao">{{ $sport->description }}</div>
                             <a href="#" class="sectionEventsCardsSaberMais"><span>Saber Mais</span></a>
                         </div>
                     </div>
-                @endif
             @endforeach
 
         </div>

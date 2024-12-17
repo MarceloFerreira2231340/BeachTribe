@@ -30,7 +30,7 @@
                     <a class="content_nav nav_widescreen" href="{{route('eventos')}}">
                         <p>Eventos</p>
                     </a>
-                    <a class="content_nav nav_widescreen" href="">
+                    <a class="content_nav nav_widescreen" href="{{route('modalidades')}}">
                         <p>Modalidades</p>
                     </a>
                     <a class="content_nav nav_widescreen" href="{{route('calendario')}}">
@@ -64,7 +64,7 @@
                     <a class="nav_responsive" href="{{route('eventos')}}">
                         <p>Eventos</p>
                     </a>
-                    <a class="nav_responsive" href="">
+                    <a class="nav_responsive" href="{{route('modalidades')}}">
                         <p>Modalidades</p>
                     </a>
                     <a class="nav_responsive" href="{{route('calendario')}}">

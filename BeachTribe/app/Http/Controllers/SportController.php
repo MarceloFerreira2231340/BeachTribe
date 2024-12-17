@@ -12,7 +12,8 @@ class SportController extends Controller
      */
     public function index()
     {
-        //
+        $sports = Sport::all();
+        return view('modalidades', compact('sports'));
     }
 
     /**

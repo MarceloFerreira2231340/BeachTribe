@@ -18,10 +18,10 @@ return new class extends Migration
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
 
-            $table->integer('phone')->unique();
+            $table->integer('phone')->unique()->nullable();
             //$table->date('data_nasc');
-            $table->string('address', 255);
-            $table->enum('tipo', ['A', 'C']);
+            $table->string('address', 255)->nullable();
+            $table->enum('tipo', ['A', 'C'])->default('C');
 
             $table->rememberToken();
             $table->timestamps();
