@@ -26,9 +26,9 @@ class UserRequest extends FormRequest
             "email"=>'required|email|unique:users,email,'.($this->user ? $this->user->id : ''),
             "tipo" => 'required|in:A,C',
             "password" => ($this->user ? 'nullable' : 'required|confirmed'),
-            "phone"=>'required|min:900000000|max:999999999|integer|unique:users,phone,'.($this->user ? $this->user->id : ''),
+            "phone"=>'nullable|min:900000000|max:999999999|integer|unique:users,phone,',
             // "data_nasc" => 'required|date|before_or_equal:now|date_format:"Y-m-d H:i:s"',
-            "address"=>'min:3|max:255',
+            "address"=>'nullable|min:3|max:255',
         ];
     }
 /*
