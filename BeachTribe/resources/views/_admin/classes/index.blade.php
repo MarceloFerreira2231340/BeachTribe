@@ -5,7 +5,6 @@
 	<!-- Page Heading -->
 	<h1 class="h3 mb-2 text-gray-800">Aulas</h1>
 
-
 	<div class="card shadow mb-4">
 		<div class="card-header pt-4">
 			<form method="GET" action="#" class="form-group form-inline" style="width: 100%">
@@ -23,8 +22,14 @@
 						<thead>
 							<tr>
 								<th>Título</th>
-								<th>Duração</th>
+								<th>Tipo</th>
 								<th>Estado</th>
+								<th>Localização</th>
+								<th>Data</th>
+								<th>Hora de Início</th>
+								<th>Hora de Fim</th>
+								<th>Duração (h)</th>
+								<th>Preço (€)</th>
 								<th>Ações</th>
 							</tr>
 						</thead>
@@ -32,15 +37,23 @@
 							@foreach($classes as $class_)
 							<tr>
 								<td>{{ $class_->title }}</td>
-								<td>{{ $class_->duration }}</td>
+								<td>{{ $class_->type }}</td>
 								<td>{{ $class_->stateToStr() }}</td>
+								<td>{{ $class_->location }}</td>
+								<td>{{ $class_->date }}</td>
+								<td>{{ $class_->bgtime }}</td>
+								<td>{{ $class_->endtime }}</td>
+								<td>{{ $class_->duration }}</td>
+								<td>{{ number_format($class_->price, 2, ',', '.') }}€</td>
 								<td nowrap>
 									<a class="btn btn-xs btn-primary btn-p" href="{{ route('admin.classes.show', $class_) }}"><i class="fas fa-eye fa-xs"></i></a>
 									<a class="btn btn-xs btn-warning btn-p" href="{{ route('admin.classes.edit', $class_) }}"><i class="fas fa-pen fa-xs"></i></a>
 									<form method="POST" action="{{ route('admin.classes.destroy', $class_) }}" role="form" class="inline">
 										@csrf
 										@method('DELETE')
-										<button type="submit" class="btn btn-xs btn-danger btn-p"><i class="fas fa-trash fa-xs"></i></button>
+										<button type="submit" class="btn btn-xs btn-danger btn-p" onclick="return confirm('Tem certeza que deseja eliminar esta aula?')">
+											<i class="fas fa-trash fa-xs"></i>
+										</button>
 									</form>
 								</td>
 							</tr>
@@ -57,19 +70,22 @@
 
 @section("moreScripts")
 <script> 
-
-	$('#dataTable').dataTable( {
+	$('#dataTable').dataTable({
 		destroy: true,
 		"bFilter": false,
-		"order": [[ 1, 'asc' ]],  
+		"order": [[ 4, 'asc' ]],  // Ordenar pela data
 		"columns": [
-		{ "orderable": false },
-		null,
-		null,
-		null,
-		{ "orderable": false }
+			null,   // Título
+			null,   // Tipo
+			null,   // Estado
+			null,   // Localização
+			null,   // Data
+			null,   // Hora de Início
+			null,   // Hora de Fim
+			null,   // Duração
+			null,   // Preço
+			{ "orderable": false }  // Ações
 		]
-	} );
-
+	});
 </script>
 @endsection

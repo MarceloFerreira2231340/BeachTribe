@@ -16,50 +16,66 @@
         <h1><b>Calendário de Aulas</b></h1>
         <h3>Aqui podes consultar as aulas e os horários disponíveis durante o mês</h3>
     </div>
-<div class="">
-    @foreach($classes as $class)
-        <div class="fix">
-            <div class="tltmes">
-                <h2>{{ date('F, Y', strtotime($class->date)) }}</h2> 
+
+    <div class="">
+        @php
+            $currentMonth = null;
+        @endphp
+
+        @foreach($classes as $class)
+            
+            @if($currentMonth != date('F, Y', strtotime($class->date)))
+                @php
+                    $currentMonth = date('F, Y', strtotime($class->date));
+                @endphp
+                <div class="tltmes">
+                    <h2>{{ $currentMonth }}</h2>
+                </div>
+            @endif
+
+            <div class="fix">
+                <div class="border rounded shadow-sm cardaula">
+                    
+                    <div class="areadate">
+                        <h2>{{ date('D', strtotime($class->date)) }}</h2>
+                        <h1>{{ date('d', strtotime($class->date)) }}</h1>
+                    </div>
+
+                    <div class="vr"></div>
+
+                    
+                    <div class="horaloc">
+                        <div class="hora">
+                            <i class="bi bi-clock-fill"></i>
+                            <p>{{ $class->bgtime }} - {{ $class->endtime }}</p>
+                        </div>
+                        <div class="loc">
+                            <i class="bi bi-geo-alt-fill"></i>
+                            <p>{{ $class->location }}</p>
+                        </div>
+                    </div>
+
+                    
+                    <div class="tipoprice">
+                        <div class="tipo">
+                            <i class="bi bi-info-circle-fill"></i>
+                            <p>{{ $class->title }}</p>
+                        </div>
+                        <div class="price">
+                            <i class="bi bi-wallet-fill"></i>
+                            <p>{{ number_format($class->price, 2, ',', '.') }}€</p>
+                        </div>
+                    </div>
+
+                    
+                    <div class="final-botao">
+                        <a class="btninscrever" href="#" role="button">Inscrever</a>
+                    </div>
+                </div>
             </div>
+        @endforeach
+    </div>
 
-            <div class="border rounded shadow-sm cardaula">
-                <div class="areadate">
-                    <h2>{{ date('D', strtotime($class->date)) }}</h2> 
-                    <h1>{{ date('d', strtotime($class->date)) }}</h1>
-                </div>
-
-                <div class="vr"></div>
-
-                <div class="horaloc">
-                    <div class="hora">
-                        <i class="bi bi-clock-fill"></i>
-                        <p>{{ date('H:i', strtotime($class->date)) }} - {{ date('H:i', strtotime($class->date . ' + ' . $class->duration . ' hours')) }}</p>
-                    </div>
-                    <div class="loc">
-                        <i class="bi bi-geo-alt-fill"></i>
-                        <p>{{ $class->location }}</p>
-                    </div>
-                </div>
-
-                <div class="tipoprice">
-                    <div class="tipo">
-                        <i class="bi bi-info-circle-fill"></i>
-                        <p>{{ $class->title }}</p>
-                    </div>
-                    <div class="price">
-                        <i class="bi bi-wallet-fill"></i>
-                        <p>{{ number_format($class->price, 2, ',', '.') }}€</p>
-                    </div>
-                </div>
-
-                <div class="final-botao">
-                    <a class="btninscrever" href="#" role="button">Inscrever</a>
-                </div>
-            </div>
-        </div>
-    @endforeach
-</div>
 @endsection
 
 @section('scripts')

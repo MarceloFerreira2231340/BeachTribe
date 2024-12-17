@@ -4,7 +4,6 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
-use Carbon\Carbon;
 
 class ClassSeeder extends Seeder
 {
@@ -18,48 +17,56 @@ class ClassSeeder extends Seeder
         // Dados de exemplo para a tabela 'classes'
         DB::table('classes')->insert([
             [
-                'type' => 'A',  
+                'type' => 'A',
                 'title' => 'Aula de Surf - Iniciação',
-                'state' => 'A', 
+                'state' => 'A',
                 'location' => 'Praia S. Pedro de Moel',
-                'date' => Carbon::now()->toDateString(),
-                'price' => 25.00, 
-                'duration' => 2, 
-                'created_at' => Carbon::now(),
-                'updated_at' => Carbon::now(),
+                'date' => '2024-06-15',
+                'bgtime' => '08:00',
+                'endtime' => '10:00',
+                'price' => 30.00,
+                'duration' => 2,
+                'created_at' => now(),
+                'updated_at' => now(),
             ],
             [
                 'type' => 'M',
                 'title' => 'Aula de Surf - Intermediário',
-                'state' => 'A', 
+                'state' => 'A',
                 'location' => 'Praia de Carcavelos',
-                'date' => Carbon::now()->addMonth()->toDateString(),
-                'price' => 35.00, 
-                'duration' => 3, 
-                'created_at' => Carbon::now(),
-                'updated_at' => Carbon::now(),
+                'date' => '2024-06-20',
+                'bgtime' => '10:00',
+                'endtime' => '13:00',
+                'price' => 45.50,
+                'duration' => 3,
+                'created_at' => now(),
+                'updated_at' => now(),
             ],
             [
                 'type' => 'B',
                 'title' => 'Aula de Surf - Avançado',
-                'state' => 'A', 
+                'state' => 'A',
                 'location' => 'Praia do Guincho',
-                'date' => Carbon::now()->addDays(10)->toDateString(),
-                'price' => 50.00, 
-                'duration' => 4,
-                'created_at' => Carbon::now(),
-                'updated_at' => Carbon::now(),
+                'date' => '2024-06-25',
+                'bgtime' => '09:30',
+                'endtime' => '11:30',
+                'price' => 50.00,
+                'duration' => 2,
+                'created_at' => now(),
+                'updated_at' => now(),
             ],
             [
                 'type' => 'A',
                 'title' => 'Aula de Surf - Iniciação',
-                'state' => 'H', 
+                'state' => 'H',
                 'location' => 'Praia de Santa Cruz',
-                'date' => Carbon::now()->subDays(5)->toDateString(),
-                'price' => 20.00, 
+                'date' => '2024-06-10',
+                'bgtime' => '07:00',
+                'endtime' => '09:00',
+                'price' => 25.00,
                 'duration' => 2,
-                'created_at' => Carbon::now()->subDays(5),
-                'updated_at' => Carbon::now()->subDays(5),
+                'created_at' => now()->subDays(5),
+                'updated_at' => now()->subDays(5),
             ],
         ]);
     }
