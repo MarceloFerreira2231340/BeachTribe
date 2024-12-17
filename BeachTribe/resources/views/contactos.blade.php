@@ -3,7 +3,7 @@
 
 @section('styles')
 <link rel="stylesheet" href="{{asset('css/normalize.')}}">
-<link rel="stylesheet" href="{{asset('css/Samuel/style.css')}}">
+<link rel="stylesheet" href="{{asset('css/Samuel/contactos.css')}}">
 <link rel="website icon" type="image/apng" href="img/DarkSolo.png">
 <link rel="stylesheet" href="https://use.typekit.net/oov2wcw.css">
 @endsection
@@ -24,10 +24,10 @@
           <input type="email" id="email" name="email" required>
 
           <label for="telefone">Telefone:</label>
-          <input type="telef" id="telefone" name="telefone">
+          <input type="text" id="telefone" name="telefone" placeholder="+392 925676224" required oninput="this.value = this.value.replace(/[^0-9]/g, '');">
 
           <label for="message">Mensagem:</label>
-          <textarea id="message" name="message" required></textarea>
+          <textarea placeholder="Don't write shit or u are canceled" id="message" name="message" required></textarea>
 
           <button type="submit">Submeter</button>
         </form>

@@ -36,12 +36,19 @@ class PageController extends Controller
     {
         return view('eventos');
     }
+    public function aboutus()
+    {
+        return view('aboutus');
+    }
+
+
 
     public function admindashboard() {
         $count_classes = Class_::count();
         $count_contacts = Contact::count();
         $count_events = Event::count();
         $count_sports = Sport::count();
+        $count_aboutus = aboutus::count();
         $count_users = User::count();
 
 

@@ -34,6 +34,8 @@ Route::get('/contactos', [PageController::class, 'contactos'])->name('contactos'
 
 Route::get('/surf', [PageController::class, 'surf'])->name('surf');
 
+Route::get('/aboutus', [PageController::class, 'aboutus'])->name('aboutus');
+
 Route::get('/admin', [PageController::class, 'admindashboard'])->name('admin.dashboard');
 
 Route::resource('admin/users', UserController::class, ['as' => 'admin']);
