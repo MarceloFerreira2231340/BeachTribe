@@ -39,7 +39,7 @@
                     <a class="content_nav nav_widescreen" href="{{route('contactos')}}">
                         <p>Contactos</p>
                     </a>
-                    <a class="content_nav nav_widescreen" href="">
+                    <a class="content_nav nav_widescreen" href="{{route('aboutus')}}">
                         <p>Sobre Nós</p>
                     </a>
                     <a class="content_nav nav_widescreen" id="nav_login" href="{{ Auth::check() ? route('admin.dashboard') : route('login') }}">
@@ -73,7 +73,7 @@
                     <a class="nav_responsive" href="{{route('contactos')}}">
                         <p>Contactos</p>
                     </a>
-                    <a class="nav_responsive" href="">
+                    <a class="nav_responsive" href="{{route('aboutus')}}">
                         <p>Sobre Nós</p>
                     </a>
                     <a class="nav_responsive" href="{{route('login')}}">

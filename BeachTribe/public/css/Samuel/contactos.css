@@ -104,6 +104,13 @@ nav {
     color: #161616;
 }
 
+input[type="number"]:hover,
+input[type="number"]:focus {
+    -webkit-appearance: none;
+    -moz-appearance: textfield;
+    appearance: none;
+}
+
 .contact-container input,
 .contact-container textarea {
     padding: 0.75rem;

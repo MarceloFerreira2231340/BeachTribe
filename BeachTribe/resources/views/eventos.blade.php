@@ -1,5 +1,5 @@
 @extends('layout.master')
-@section('title', 'Calendário de Aulas')
+@section('title', 'Eventos')
 
 @section('styles')
 <link rel="stylesheet" href="{{('css/Marcelo/style.css')}}">
