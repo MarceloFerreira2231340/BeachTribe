@@ -13,7 +13,7 @@ class AboutUsController extends Controller
     public function index()
     {
         $aboutus = AboutUs::all();
-        return view('_admin.aboutus.index', compact('aboutus'));
+        return view('aboutus', compact('aboutus'));
     }
 
     /**

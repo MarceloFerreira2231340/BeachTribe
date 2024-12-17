@@ -38,45 +38,17 @@
             <div class="divider-large"></div>
 
             <div class="team-section">
+
+                @foreach($aboutus as $about)
                 <div class="team-member">
                     <div class="member-image">
-                        <img src="path-to-joao-image.jpg" alt="João">
+                        <img src="{{ asset('img/Samuel/' . $about->image) }}" alt="Banner da Carta">
                     </div>
-                    <h3>João</h3>
+                    <h3>{{$about->name}}</h3>
                 </div>
-                <div class="team-member">
-                    <div class="member-image">
-                        <img src="path-to-carolina-image.jpg" alt="Carolina">
-                    </div>
-                    <h3>Carolina</h3>
-                </div>
-                <div class="team-member">
-                    <div class="member-image">
-                        <img src="path-to-marcelo-image.jpg" alt="Marcelo">
-                    </div>
-                    <h3>Marcelo</h3>
-                </div>
-                <div class="team-member">
-                    <div class="member-image">
-                        <img src="path-to-dinis-image.jpg" alt="Dinis">
-                    </div>
-                    <h3>Dinis</h3>
-                </div>
-                <div class="team-member">
-                    <div class="member-image">
-                        <img src="path-to-samuel-image.jpg" alt="Samuel">
-                    </div>
-                    <h3>Samuel</h3>
-                </div>
+                @endforeach
             </div>
         </div>
     </main>
 
-@endsection
-
-@section('scripts')
-<script src="{{asset('js/login_animation.js')}}"></script>
-<script src="{{asset('js/dropdown_animation.js')}}"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 @endsection

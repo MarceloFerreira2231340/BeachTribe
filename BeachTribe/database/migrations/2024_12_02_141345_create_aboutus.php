@@ -11,21 +11,19 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('contactus', function (Blueprint $table) {
+        Schema::create('aboutus', function (Blueprint $table) {
             $table->id();
-            $table->string('description',360);
-            $table->string('title',255);
-            $table->string('location',50);
+            $table->string('name',255);
+            $table->string('image', 255);
             $table->timestamps();
         });
     }
-
     /**
      * Reverse the migrations.
      */
     public function down(): void
     {
         Schema::dropIfExists('aboutus');
-     
+
     }
 };
