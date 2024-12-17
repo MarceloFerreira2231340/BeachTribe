@@ -70,7 +70,7 @@
                 </a>
                 <div id="collapseClasses" class="collapse" aria-labelledby="headingClasses" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="#">Ver Aulas</a>
+                        <a class="collapse-item" href="{{ route('admin.classes.index') }}">Ver Aulas</a>
                         <a class="collapse-item" href="{{ route('admin.classes.create') }}">Nova Aula</a>
                     </div>
                 </div>
@@ -83,8 +83,8 @@
                 </a>
                 <div id="collapseSports" class="collapse" aria-labelledby="headingSports" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="#">Ver Modalidades</a>
-                        <a class="collapse-item" href="#">Nova Modalidade</a>
+                        <a class="collapse-item" href="{{ route('admin.sports.index') }}">Ver Modalidades</a>
+                        <a class="collapse-item" href="{{ route('admin.sports.create') }}">Nova Modalidade</a>
                     </div>
                 </div>
             </li>
@@ -97,8 +97,8 @@
                 </a>
                 <div id="collapseEventos" class="collapse" aria-labelledby="headingEventos" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="#">Ver Eventos</a>
-                        <a class="collapse-item" href="#">Novo Evento</a>
+                        <a class="collapse-item" href="{{ route('admin.events.index') }}">Ver Eventos</a>
+                        <a class="collapse-item" href="{{ route('admin.events.create') }}">Novo Evento</a>
                     </div>
                 </div>
             </li>
@@ -111,8 +111,8 @@
                 </a>
                 <div id="collapseContactos" class="collapse" aria-labelledby="headingContactos" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="#">Ver Registo de Contactos</a>
-                        <a class="collapse-item" href="#">Novo Contacto</a>
+                        <a class="collapse-item" href="{{ route('admin.contacts.index') }}">Ver Contactos</a>
+                        <a class="collapse-item" href="{{ route('admin.contacts.create') }}">Novo Contacto</a>
                     </div>
                 </div>
             </li>
@@ -125,8 +125,8 @@
                 </a>
                 <div id="collapseAboutUs" class="collapse" aria-labelledby="headingAboutUs" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="#">Ver Sobre Nós</a>
-                        <a class="collapse-item" href="#">Novo Sobre Nós</a>
+                        <a class="collapse-item" href="{{ route('admin.aboutus.index') }}">Ver Sobre nós</a>
+                        <a class="collapse-item" href="{{ route('admin.aboutus.create') }}">Novo Sobtre nós</a>
                     </div>
                 </div>
             </li>
