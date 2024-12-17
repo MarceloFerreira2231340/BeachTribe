@@ -16,8 +16,10 @@ return new class extends Migration
             $table->enum('type', ['A', 'M', 'B'])->default('M')->notNullable();
             $table->string('title', 120)->notNullable();
             $table->enum('state', ['A', 'H'])->default('H')->notNullable();
-            $table->string('location', 120)->notNullable(); 
+            $table->string('location', 120)->notNullable();
             $table->date('date')->notNullable();
+            $table->string('bgtime')->notNullable();
+            $table->string('endtime')->notNullable();
             $table->decimal('price', 8, 2)->default(0.00)->notNullable(); 
             $table->integer('duration')->notNullable();
 
@@ -32,7 +34,8 @@ return new class extends Migration
 
     /**
      * Reverse the migrations.
-     */
+    */
+
     public function down(): void
     {
         Schema::dropIfExists('classes');
