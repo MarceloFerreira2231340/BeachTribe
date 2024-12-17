@@ -20,16 +20,20 @@ class ClassRequest extends FormRequest
      * @return array<string, \Illuminate\Contracts\Validation\ValidationRule|array<mixed>|string>
      */
     public function rules(): array
-    {
-        return [
-            "title" => 'required|min:3|max:40|regex:/^[A-ZÀ-úa-z\s]+$/',
-            "type" => 'required|in:A,M,B',
-            "location" => 'required|min:3|max:120|regex:/^[A-ZÀ-úa-z\s]+$/',
-            // "date" => 'required|date|before_or_equal:now|date_format:"Y-m-d H:i:s"',
-            "duration" => 'required',
-            "state" => 'required|in:A,H',
-        ];
-    }
+{
+    return [
+        'title' => 'required|string|max:120',
+        'type' => 'required|in:A,M,B',
+        'state' => 'required|in:A,H',
+        'location' => 'required|string|max:120',
+        'date' => 'required|date',
+        'bgtime' => 'required|date_format:H:i', 
+        'endtime' => 'required|date_format:H:i|after:bgtime', 
+        'price' => 'required|numeric|min:0',
+        'duration' => 'required|integer|min:1',
+    ];
+}
+
 
     /*
     public function projects() {

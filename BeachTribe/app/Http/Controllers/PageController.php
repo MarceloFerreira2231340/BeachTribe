@@ -17,7 +17,7 @@ class PageController extends Controller
     public function index()
     {
         $events = Event::all();
-        $path = "img/Marcelo/eventosMarcelo/";
+        $path = "img/Dinis/eventos/";
         return view('index', compact('events', 'path'));
     }
     public function calendarioDeAulas()
@@ -36,10 +36,6 @@ class PageController extends Controller
     {
         return view('eventos');
     }
-    public function aboutus()
-    {
-        return view('aboutus');
-    }
 
 
 
@@ -48,7 +44,6 @@ class PageController extends Controller
         $count_contacts = Contact::count();
         $count_events = Event::count();
         $count_sports = Sport::count();
-        $count_aboutus = aboutus::count();
         $count_users = User::count();
 
 
