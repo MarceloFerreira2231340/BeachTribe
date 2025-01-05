@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\EventRequest;
 use App\Models\Event;
-use Illuminate\Http\Request;
 
 class EventController extends Controller
 {
@@ -22,8 +21,8 @@ class EventController extends Controller
      */
     public function create()
     {
-        $events = new Event;
-        return view('_admin.events.create', compact('events'));
+        $event = new Event;
+        return view('_admin.events.create', compact('event'));
     }
 
     /**
@@ -33,9 +32,17 @@ class EventController extends Controller
     {
         $fields = $request->validated();
 
-        $events = new Event;
-        $events->fill($fields);
-        $events->save();
+        $event = new Event;
+        $event->fill($fields);
+        $event->save();
+
+        if ($request->hasFile('image')) {
+            $image = $request->file('image');
+            $imageName = time() . '_' . uniqid() . '.' . $image->getClientOriginalExtension();
+            $image->storeAs('events', $imageName, 'public');
+            $event->image = $imageName;
+            $event->save();
+        }
 
         return redirect()->route('admin.events.index')
             ->with('success', 'Evento criado com sucesso');
@@ -44,9 +51,9 @@ class EventController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Event $events)
+    public function show(Event $event)
     {
-        return view('_admin.events.show', compact('events'));
+        return view('_admin.events.show', compact('event'));
     }
 
     /**
@@ -60,7 +67,7 @@ class EventController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Event $event)
+    public function update(EventRequest $request, Event $event)
     {
         $fields = $request->validated();
 

@@ -57,7 +57,7 @@
 							<tr>
 								<td>{{ $event->type }}</td>
 								<td>{{ $event->title }}</td>
-								<td><img src="{{ asset('img/Marcelo/eventosMarcelo/' . $event->image) }}" width="50" alt="Banner da Carta"></td>
+                                <td><img src="{{ Storage::url('events/' . $event->image) }}" width="50" alt="Imagem do Evento"></td>
 								<td>{{ $event->local }}</td>
 								<td>{{ $event->state }}</td>
 								<td>{{ $event->date }}</td>
