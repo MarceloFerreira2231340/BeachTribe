@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PageController;
-use illuminate\support\facades\Auth;
+use Illuminate\Support\Facades\Auth;
 
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ClassController;
@@ -26,7 +26,7 @@ Route::get('/', [PageController::class, 'index'])->name('index');
 
 Route::get('/calendario', [ClassController::class, 'calendario'])->name('calendario');
 
-Route::get('/eventos', [EventController::class, 'index'])->name('eventos');
+Route::get('/eventos', [PageController::class, 'eventos'])->name('eventos');
 
 Route::get('/modalidades', [SportController::class, 'index'])->name('modalidades');
 

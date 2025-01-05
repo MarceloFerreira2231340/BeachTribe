@@ -2,20 +2,19 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\EventRequest;
 use App\Models\Event;
 use Illuminate\Http\Request;
 
 class EventController extends Controller
 {
-
-
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
         $events = Event::all();
-        return view('eventos', compact('events'));
+        return view('_admin.events.index', compact('events'));
     }
 
     /**
@@ -23,23 +22,31 @@ class EventController extends Controller
      */
     public function create()
     {
-        //
+        $events = new Event;
+        return view('_admin.events.create', compact('events'));
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(EventRequest $request)
     {
-        //
+        $fields = $request->validated();
+
+        $events = new Event;
+        $events->fill($fields);
+        $events->save();
+
+        return redirect()->route('admin.events.index')
+            ->with('success', 'Evento criado com sucesso');
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(Event $event)
+    public function show(Event $events)
     {
-        //
+        return view('_admin.events.show', compact('events'));
     }
 
     /**
@@ -47,7 +54,7 @@ class EventController extends Controller
      */
     public function edit(Event $event)
     {
-        //
+        return view('_admin.events.edit', compact('event'));
     }
 
     /**
@@ -55,7 +62,13 @@ class EventController extends Controller
      */
     public function update(Request $request, Event $event)
     {
-        //
+        $fields = $request->validated();
+
+        $event->fill($fields);
+        $event->save();
+
+        return redirect()->route('admin.events.index')
+            ->with('success', 'Evento alterado com sucesso');
     }
 
     /**
@@ -63,6 +76,9 @@ class EventController extends Controller
      */
     public function destroy(Event $event)
     {
-        //
+        $event->delete();
+
+        return redirect()->route('admin.events.index')
+            ->with('success', 'Evento eliminado com sucesso');
     }
 }

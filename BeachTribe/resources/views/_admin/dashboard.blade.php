@@ -34,6 +34,7 @@
 					<h1 style="display:inline;"> {{ $count_events }} </h1>
 					<h3 style="display:inline;"> Eventos </h3>
 				</div>
+				<a class="btn btn-primary" href="{{ route('admin.events.create') }}"><i class="fas fa-plus"></i> Adicionar Evento</a>
 			</div>
 		</div>
 		<div class="col-4">
