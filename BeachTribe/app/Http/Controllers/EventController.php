@@ -74,6 +74,14 @@ class EventController extends Controller
         $event->fill($fields);
         $event->save();
 
+        if ($request->hasFile('image')) {
+            $image = $request->file('image');
+            $imageName = time() . '_' . uniqid() . '.' . $image->getClientOriginalExtension();
+            $image->storeAs('events', $imageName, 'public');
+            $event->image = $imageName;
+            $event->save();
+        }
+
         return redirect()->route('admin.events.index')
             ->with('success', 'Evento alterado com sucesso');
     }
