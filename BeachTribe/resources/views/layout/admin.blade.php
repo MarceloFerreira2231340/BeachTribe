@@ -31,7 +31,7 @@
         <ul class="navbar-nav dark sidebar sidebar-dark accordion" id="accordionSidebar">
 
             <!-- Sidebar - Brand -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" style="height:100px;" href="/admin">
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" style="height:100px;" href="/">
                 <img src="{{ asset('img/SoloWhite.png') }}" style="height:80px;" alt="" class="img-fluid">
             </a>
 
