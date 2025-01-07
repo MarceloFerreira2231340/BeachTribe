@@ -5,28 +5,16 @@
     <!-- Page Heading -->
     <h1 class="h3 mb-2 text-gray-800">Aulas</h1>
 
-    <!-- Feedback ao Utilizador -->
-    @if(session('success'))
-        <div class="alert alert-success">{{ session('success') }}</div>
-    @endif
-    @if(session('error'))
-        <div class="alert alert-danger">{{ session('error') }}</div>
-    @endif
 
     <div class="card shadow mb-4">
         <div class="card-header py-3">
             <form method="GET" action="{{ route('admin.classes.index') }}" class="form-group form-inline" style="width: 100%;">
+
                 <!-- Botão de Adicionar -->
                 <div class="form-group col-3">
                     <a class="btn btn-primary" href="{{ route('admin.classes.create') }}">
                         <i class="fas fa-plus"></i> Adicionar Aula
                     </a>
-                </div>
-				
-                <!-- Barra de Pesquisa -->
-                <div class="form-group col-6 ml-auto">
-                    <input type="text" name="search" class="form-control" placeholder="Pesquisar por título..." value="{{ request('search') }}">
-                    <button type="submit" class="btn btn-primary ml-2"><i class="fas fa-search"></i> Pesquisar</button>
                 </div>
             </form>
         </div>
@@ -49,7 +37,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @forelse($classes as $class_)
+                            @foreach($classes as $class_)
                                 <tr>
                                     <td>{{ $class_->title }}</td>
                                     <td>{{ ucfirst($class_->type) }}</td>
@@ -61,31 +49,19 @@
                                     <td>{{ $class_->duration }}</td>
                                     <td>{{ number_format($class_->price, 2, ',', '.') }}€</td>
                                     <td nowrap>
-                                        <a class="btn btn-xs btn-primary btn-p" href="{{ route('admin.classes.show', $class_) }}" aria-label="Ver aula">
-                                            <i class="fas fa-eye fa-xs"></i>
-                                        </a>
-                                        <a class="btn btn-xs btn-warning btn-p" href="{{ route('admin.classes.edit', $class_) }}" aria-label="Editar aula">
-                                            <i class="fas fa-pen fa-xs"></i>
-                                        </a>
-                                        <form method="POST" action="{{ route('admin.classes.destroy', $class_) }}" role="form" class="d-inline">
+                                        <a class="btn btn-xs btn-primary btn-p" href="{{ route('admin.classes.show', $class_) }}"><i class="fas fa-eye fa-xs"></i></a>
+                                        <a class="btn btn-xs btn-warning btn-p" href="{{ route('admin.classes.edit', $class_) }}"><i class="fas fa-pen fa-xs"></i></a>
+                                        <form method="POST" action="{{ route('admin.classes.destroy', $class_) }}" class="inline">
                                             @csrf
                                             @method('DELETE')
-                                            <button type="submit" class="btn btn-xs btn-danger btn-p" onclick="return confirm('Tem certeza que deseja eliminar a aula: {{ $class_->title }}?')">
-                                                <i class="fas fa-trash fa-xs"></i>
-                                            </button>
+                                            <button type="submit" class="btn btn-xs btn-danger btn-p"><i class="fas fa-trash fa-xs"></i></button>
                                         </form>
                                     </td>
                                 </tr>
-                            @empty
-                                <tr>
-                                    <td colspan="10" class="text-center">Nenhuma aula encontrada.</td>
-                                </tr>
-                            @endforelse
+                            @endforeach
                         </tbody>
+                        
                     </table>
-
-                    <!-- Paginação -->
-                    {{ $classes->links() }}
                 </div>
             </div>
         </div>

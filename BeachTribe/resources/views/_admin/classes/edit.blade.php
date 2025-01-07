@@ -1,27 +1,30 @@
 @extends('layout.admin')
 
 @section('content')
+
 <div class="container-fluid">
-    <h1 class="h3 mb-4 text-gray-800">Editar Aula</h1>
 
-    <div class="card shadow mb-4">
-        <div class="card-header py-3">
-            <h6 class="m-0 font-weight-bold text-primary">Editar: {{ $class_->title }}</h6>
-        </div>
-        <div class="card-body">
-            <form method="POST" action="{{ route('admin.classes.update', $class_->id) }}">
-                @csrf
-                @method('PUT')
+	<div class="card shadow mb-4">
+		<div class="card-header py-3">
+			Editar Aula
+		</div>
+		<div class="card-body">
 
-                <!-- Formulário de Edição -->
-                @include('_admin.classes.partials.add-edit')
+			<form method="POST" action="{{ route('admin.classes.update', $class_) }}" class="form-group" enctype="multipart/form-data">
+				@csrf
+				@method('PUT')
+			
+				@include('_admin.classes.partials.add-edit')
+			
+				<div class="form-group">
+					<button type="submit" class="btn btn-success" name="ok">Guardar</button>
+					<a href="{{ route('admin.classes.index') }}" class="btn btn-default">Cancelar</a>
+				</div>
+			</form>			
 
-                <div class="form-group">
-                    <button type="submit" class="btn btn-primary">Salvar Alterações</button>
-                    <a href="{{ route('admin.classes.index') }}" class="btn btn-secondary">Cancelar</a>
-                </div>
-            </form>
-        </div>
-    </div>
+		</div>
+	</div>
 </div>
+
+
 @endsection
