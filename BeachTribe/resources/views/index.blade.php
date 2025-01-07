@@ -75,7 +75,7 @@
 
                 @foreach($events->take(3) as $event)
                 <div class="index_s3_cards">
-                    <img src="{{ $path.$event->image }}">
+                    <img src="{{ $path_events.$event->image }}">
                     <div class="index_s3_textarea">
                         <h4>{{ $event->title }}</h4>
                         <p>{{ $event->description }}</p>
@@ -123,6 +123,17 @@
         <section id="index_section4">
             <h3>Ajude-nos a espalhar a palavra!</h3>
             <div id="index_s4_area">
+
+                @foreach($products->shuffle()->take(6) as $product)
+                    <a href="{{ $product->link }}">
+                        <div class="index_s4_cards">
+                            <img src="{{ $path_products.$product->image }}">
+                            <p>{{ $product->name }}</p>
+                        </div>
+                    </a>
+                @endforeach
+
+                <!--
                 <a href="https://wordpress.g6.dwm202425.online/product/baralho-de-cartas-azul/?preview=true">
                     <div class="index_s4_cards">
                         <img src="https://wordpress.g6.dwm202425.online/wp-content/uploads/2024/11/Acartasazul.png">
@@ -159,6 +170,7 @@
                         <p>Boné</p>
                     </div>
                 </a>
+                -->
             </div>
             <a href="https://wordpress.g6.dwm202425.online/">
                 <div id="index_s4_loja">

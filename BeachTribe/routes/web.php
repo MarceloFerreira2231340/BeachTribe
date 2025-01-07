@@ -10,6 +10,7 @@ use App\Http\Controllers\SportController;
 use App\Http\Controllers\EventController;
 use App\Http\Controllers\ContactsController;
 use App\Http\Controllers\AboutUsController;
+use App\Http\Controllers\ProductController;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,7 +25,7 @@ use App\Http\Controllers\AboutUsController;
 
 Route::get('/', [PageController::class, 'index'])->name('index');
 
-Route::get('/calendario', [ClassController::class, 'calendario'])->name('calendario');
+// Route::get('/calendario', [ClassController::class, 'calendario'])->name('calendario');
 
 Route::get('/eventos', [PageController::class, 'eventos'])->name('eventos');
 
@@ -40,7 +41,7 @@ Route::get('/admin', [PageController::class, 'admindashboard'])->name('admin.das
 
 Route::resource('admin/users', UserController::class, ['as' => 'admin']);
 
-Route::resource('admin/classes', ClassController::class, ['as' => 'admin']);
+// Route::resource('admin/classes', ClassController::class, ['as' => 'admin']);
 
 Route::resource('admin/sports', SportController::class, ['as' => 'admin']);
 
@@ -50,6 +51,7 @@ Route::resource('admin/contacts', ContactsController::class, ['as' => 'admin']);
 
 Route::resource('admin/aboutus', AboutUsController::class, ['as' => 'admin']);
 
+Route::resource('admin/products', ProductController::class, ['as' => 'admin']);
 
 Auth::routes();
 

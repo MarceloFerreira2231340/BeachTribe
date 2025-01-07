@@ -131,6 +131,20 @@
                 </div>
             </li>
 
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseProducts"
+                    aria-expanded="true" aria-controls="collapseProducts">
+                    <i class="fas fa-boxes"></i>
+                    <span>Produtos</span>
+                </a>
+                <div id="collapseProducts" class="collapse" aria-labelledby="headingProducts" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <a class="collapse-item" href="{{ route('admin.products.index') }}">Ver Produtos</a>
+                        <a class="collapse-item" href="{{ route('admin.products.create') }}">Novo Produtos</a>
+                    </div>
+                </div>
+            </li>
+
             <!--
 
             Nav Item - Pages Collapse Menu

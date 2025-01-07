@@ -8,6 +8,7 @@ use App\Models\Contact;
 use App\Models\Event;
 use App\Models\Sport;
 use App\Models\User;
+use App\Models\Product;
 use Illuminate\Support\Facades\DB;
 
 use Illuminate\Http\Request;
@@ -17,8 +18,10 @@ class PageController extends Controller
     public function index()
     {
         $events = Event::all();
-        $path = "img/Dinis/eventos/";
-        return view('index', compact('events', 'path'));
+        $products = Product::all();
+        $path_events = "img/Dinis/eventos/";
+        $path_products = "img/Dinis/produtos/";
+        return view('index', compact('events', 'products', 'path_events', 'path_products'));
     }
     public function calendarioDeAulas()
     {
@@ -46,11 +49,12 @@ class PageController extends Controller
         $count_events = Event::count();
         $count_sports = Sport::count();
         $count_users = User::count();
+        $count_products = Product::count();
 
 
         //$count_classes_per_sport = Sport::withCount('classes')->get();
 
-        return view('_admin.dashboard', compact('count_classes', 'count_contacts', 'count_events', 'count_sports', 'count_users'/*, 'count_classes_per_sport'*/));
+        return view('_admin.dashboard', compact('count_classes', 'count_contacts', 'count_events', 'count_sports', 'count_users', 'count_products'/*, 'count_classes_per_sport'*/));
     }
 }
 
