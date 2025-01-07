@@ -25,7 +25,7 @@ use App\Http\Controllers\ProductController;
 
 Route::get('/', [PageController::class, 'index'])->name('index');
 
-// Route::get('/calendario', [ClassController::class, 'calendario'])->name('calendario');
+Route::get('/calendario', [ClassController::class, 'calendario'])->name('calendario');
 
 Route::get('/eventos', [PageController::class, 'eventos'])->name('eventos');
 
@@ -41,7 +41,7 @@ Route::get('/admin', [PageController::class, 'admindashboard'])->name('admin.das
 
 Route::resource('admin/users', UserController::class, ['as' => 'admin']);
 
-// Route::resource('admin/classes', ClassController::class, ['as' => 'admin']);
+Route::resource('admin/classes', ClassController::class, ['as' => 'admin']);
 
 Route::resource('admin/sports', SportController::class, ['as' => 'admin']);
 
@@ -56,7 +56,3 @@ Route::resource('admin/products', ProductController::class, ['as' => 'admin']);
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
-
-
-
