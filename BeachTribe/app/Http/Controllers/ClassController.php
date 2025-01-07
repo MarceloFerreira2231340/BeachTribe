@@ -8,9 +8,17 @@ use Illuminate\Http\Request;
 
 class ClassController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        $classes = Class_::all();
+        $search = $request->input('search');
+        $query = Class_::query();
+
+        if ($search) {
+            $query->where('title', 'like', '%' . $search . '%');
+        }
+
+        $classes = $query->orderBy('date', 'asc')->paginate(10);
+
         return view('_admin.classes.index', compact('classes'));
     }
 
@@ -28,10 +36,8 @@ class ClassController extends Controller
      */
     public function store(ClassRequest $request)
     {
-        
         $fields = $request->validated();
 
-        
         $class_ = new Class_;
         $class_->fill($fields);
         $class_->save();
@@ -43,28 +49,30 @@ class ClassController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Class_ $class_)
+    public function show($classId)
     {
-        return view('_admin.classes.show', compact('class_'));
+    $class_ = Class_::findOrFail($classId);  
+    return view('_admin.classes.show', compact('class_'));
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Class_ $class_)
+    public function edit($classId)
     {
-        return view('_admin.classes.edit', compact('class_'));
+    $class_ = Class_::findOrFail($classId);  
+    return view('_admin.classes.edit', compact('class_'));
     }
+
+
 
     /**
      * Update the specified resource in storage.
      */
     public function update(ClassRequest $request, Class_ $class_)
     {
-        
         $fields = $request->validated();
 
-        
         $class_->fill($fields);
         $class_->save();
 
@@ -77,10 +85,12 @@ class ClassController extends Controller
      */
     public function destroy(Class_ $class_)
     {
-        $class_->delete();
 
-        return redirect()->route('admin.classes.index')
-            ->with('success', 'Aula eliminada com sucesso');
+    $class_->delete();
+
+    
+    return redirect()->route('admin.classes.index')
+        ->with('success', 'Aula deletada com sucesso!');
     }
 
     /**

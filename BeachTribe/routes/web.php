@@ -50,6 +50,11 @@ Route::resource('admin/contacts', ContactsController::class, ['as' => 'admin']);
 
 Route::resource('admin/aboutus', AboutUsController::class, ['as' => 'admin']);
 
+
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+
+
+
