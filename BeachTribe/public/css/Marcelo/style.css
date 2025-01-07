@@ -337,6 +337,16 @@ footer {
     text-align: center;
 }
 
+.addEventBlade{
+    display: flex;
+    margin: 25px auto 0;
+    width: 100%;
+}
+
+.addEventBlade > a {
+    margin: 0 auto;
+}
+
 .sectionsEventsDisplay {
     display: flex;
     flex-direction: row;
@@ -434,7 +444,7 @@ footer {
     margin-bottom: 10px;
 }
 
-#HeroImageLandingTextTitle, 
+#HeroImageLandingTextTitle,
 #HeroImageLandingTextsubTitle{
     font-family: "IBM Plex Mono", sans-serif;
     line-height: normal;
@@ -554,7 +564,7 @@ footer {
     font-weight: 700;
     text-align: center;
     margin-top: 40px;
-    margin-bottom: 20px;    
+    margin-bottom: 20px;
 }
 
 #LandingForm {
@@ -593,7 +603,7 @@ footer {
     font-weight: 700;
 }
 
-.formcontrol { 
+.formcontrol {
     width: 460px;
     height: 30px;
     flex-shrink: 0;
@@ -640,7 +650,7 @@ footer {
         align-items: center;
     }
   }
-  
+
   @media (max-width: 649px) {
     .HeroImageSection {
         height: 450px;
@@ -658,7 +668,7 @@ footer {
         margin: auto;
     }
 
-    .formcontrol { 
+    .formcontrol {
         width: 100%;
     }
 
