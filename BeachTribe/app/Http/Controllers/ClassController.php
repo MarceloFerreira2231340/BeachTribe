@@ -2,23 +2,38 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\ClassRequest;
 use App\Models\Class_;
+use App\Http\Requests\ClassRequest;
+use Illuminate\Http\Request;
 
 class ClassController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        $classes = Class_::all();
+        $search = $request->input('search');
+        $query = Class_::query();
+
+        if ($search) {
+            $query->where('title', 'like', '%' . $search . '%');
+        }
+
+        $classes = $query->orderBy('date', 'asc')->paginate(10);
+
         return view('_admin.classes.index', compact('classes'));
     }
 
+    /**
+     * Show the form for creating a new resource.
+     */
     public function create()
     {
         $class_ = new Class_;
         return view('_admin.classes.create', compact('class_'));
     }
 
+    /**
+     * Store a newly created resource in storage.
+     */
     public function store(ClassRequest $request)
     {
         $fields = $request->validated();
@@ -31,30 +46,56 @@ class ClassController extends Controller
             ->with('success', 'Aula criada com sucesso');
     }
 
-    public function show(Class_ $class_)
+    /**
+     * Display the specified resource.
+     */
+    public function show($classId)
     {
-        return view('_admin.classes.show', compact('class_'));
+    $class_ = Class_::findOrFail($classId);  
+    return view('_admin.classes.show', compact('class_'));
     }
 
-    public function edit(Class_ $class_)
+    /**
+     * Show the form for editing the specified resource.
+     */
+    public function edit($classId)
     {
-        return view('_admin.classes.edit', compact('class_'));
+    $class_ = Class_::findOrFail($classId);  
+    return view('_admin.classes.edit', compact('class_'));
     }
 
+
+
+    /**
+     * Update the specified resource in storage.
+     */
     public function update(ClassRequest $request, Class_ $class_)
     {
-        $class_->update($request->all());
-        return redirect()->route('admin.classes.index')->with('success', 'Aula atualizada com sucesso!');
-    }
+        $fields = $request->validated();
 
-    public function destroy(Class_ $class_)
-    {
-        $class_->delete();
+        $class_->fill($fields);
+        $class_->save();
 
         return redirect()->route('admin.classes.index')
-            ->with('success', 'Aula eliminada com sucesso');
+            ->with('success', 'Aula alterada com sucesso');
     }
 
+    /**
+     * Remove the specified resource from storage.
+     */
+    public function destroy(Class_ $class_)
+    {
+
+    $class_->delete();
+
+    
+    return redirect()->route('admin.classes.index')
+        ->with('success', 'Aula deletada com sucesso!');
+    }
+
+    /**
+     * Display a listing of the resource for calendar view.
+     */
     public function calendario()
     {
         $classes = Class_::where('state', 'A')->orderBy('date', 'asc')->get();
@@ -62,4 +103,3 @@ class ClassController extends Controller
         return view('CalendarioDeAulas', compact('classes'));
     }
 }
-

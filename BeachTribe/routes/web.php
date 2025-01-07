@@ -40,7 +40,7 @@ Route::get('/admin', [PageController::class, 'admindashboard'])->name('admin.das
 
 Route::resource('admin/users', UserController::class, ['as' => 'admin']);
 
-Route::resource('admin/classes', ClassController::class, ['as' => 'admin','parameters' => ['classes' => 'class_']]);
+Route::resource('admin/classes', ClassController::class, ['as' => 'admin']);
 
 Route::resource('admin/sports', SportController::class, ['as' => 'admin']);
 
@@ -54,3 +54,7 @@ Route::resource('admin/aboutus', AboutUsController::class, ['as' => 'admin']);
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+
+
+
