@@ -29,7 +29,7 @@ Route::get('/calendario', [ClassController::class, 'calendario'])->name('calenda
 
 Route::get('/eventos', [PageController::class, 'eventos'])->name('eventos');
 
-Route::get('/modalidades', [SportController::class, 'index'])->name('modalidades');
+Route::get('/modalidades', [PageController::class, 'modalidades'])->name('modalidades');
 
 Route::get('/contactos', [PageController::class, 'contactos'])->name('contactos');
 

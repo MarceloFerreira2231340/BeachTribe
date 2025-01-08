@@ -41,6 +41,11 @@ class PageController extends Controller
         return view('eventos', compact('events'));
     }
 
+    public function modalidades()
+    {
+        $sports = Sport::all();
+        return view('modalidades', compact('sports'));
+    }
 
 
     public function admindashboard() {

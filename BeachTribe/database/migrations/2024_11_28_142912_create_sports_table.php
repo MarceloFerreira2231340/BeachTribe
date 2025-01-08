@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('sports', function (Blueprint $table) {
             $table->id();
             $table->string('image', 255)->nullable();
-            $table->string('title', 120)->notNullable();
+            $table->string('title', 100);
             $table->enum('difficulty', ['Easy', 'Medium', 'Hard'])->default('Medium')->notNullable();
             $table->string('description', 250)->notNullable(); //
             $table->timestamps();
