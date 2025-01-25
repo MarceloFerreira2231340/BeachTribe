@@ -49,7 +49,7 @@
                         <div class="sectionEventsCardsInfo">
                             <div class="sectionEventsCardsTitle">{{ $event->type }} -<br>{{ $event->title }}</div>
                             <div class="sectionEventsCardsDescricao">{{ $event->description }}</div>
-                            <a href="#" class="sectionEventsCardsSaberMais"><span>Saber Mais</span></a>
+                            <a href="{{ route('abouteventos', $event) }}" class="sectionEventsCardsSaberMais"><span>Saber Mais</span></a>
                         </div>
                     </div>
                 @endif

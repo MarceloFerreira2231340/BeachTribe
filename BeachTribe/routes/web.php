@@ -8,7 +8,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\ClassController;
 use App\Http\Controllers\SportController;
 use App\Http\Controllers\EventController;
-use App\Http\Controllers\ContactsController;
+use App\Http\Controllers\ContactController;
 use App\Http\Controllers\AboutUsController;
 use App\Http\Controllers\ProductController;
 
@@ -28,6 +28,7 @@ Route::get('/', [PageController::class, 'index'])->name('index');
 Route::get('/calendario', [ClassController::class, 'calendario'])->name('calendario');
 
 Route::get('/eventos', [PageController::class, 'eventos'])->name('eventos');
+Route::get('/aboutEventos/{id}', [EventController::class, 'showEvent'])->name('abouteventos');
 
 Route::get('/modalidades', [PageController::class, 'modalidades'])->name('modalidades');
 
@@ -47,7 +48,7 @@ Route::resource('admin/sports', SportController::class, ['as' => 'admin']);
 
 Route::resource('admin/events', EventController::class, ['as' => 'admin']);
 
-Route::resource('admin/contacts', ContactsController::class, ['as' => 'admin']);
+Route::resource('admin/contacts', ContactController::class, ['as' => 'admin']);
 
 Route::resource('admin/aboutus', AboutUsController::class, ['as' => 'admin']);
 

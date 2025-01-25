@@ -56,6 +56,12 @@ class EventController extends Controller
         return view('_admin.events.show', compact('event'));
     }
 
+    public function showEvent($id)
+    {
+        $event = Event::findOrFail($id);
+        return view('abouteventos', compact('event'));
+    }
+
     /**
      * Show the form for editing the specified resource.
      */
