@@ -24,12 +24,12 @@
 
 @section('content')
     <div class="beachTribeEvents">
-        <img src="{{ 'img/Marcelo/eventosMarcelo/mick-snap-banner.png' }}" alt="HeroImage">
+        <img src="{{ 'img/Marcelo/eventosMarcelo/EventosCard.png' }}" alt="HeroImage">
         <div class="sectionEvents">
             <div class="sectionEventsTitle">Eventos</div>
             <div class="sectionEventsText"><span>Aqui podes encontrar eventos que irão decorrer nas praias dos nossos
-                clubes!<br>Desde formações até concertos, há sempre algo interessante para participar.<br><br>Dirige-te
-                à praia mais próxima ou inscreve-te online!</span>
+                    clubes!<br>Desde formações até concertos, há sempre algo interessante para participar.<br><br>Dirige-te
+                    à praia mais próxima ou inscreve-te online!</span>
                 <span>Se tens um evento que gostarias de partilhar connosco, não hesites em contactar-nos!</span>
             </div>
             <div class="addEventBlade">
@@ -40,16 +40,16 @@
         </div>
 
         <div class="sectionsEventsDisplay">
-
-
             @foreach ($events as $event)
                 @if ($event->state !== 'desativado')
                     <div class="sectionEventsCards">
                         <img src="{{ Storage::url('events/' . $event->image) }}" alt="Banner da Carta">
                         <div class="sectionEventsCardsInfo">
                             <div class="sectionEventsCardsTitle">{{ $event->type }} -<br>{{ $event->title }}</div>
-                            <div class="sectionEventsCardsDescricao">{{ $event->description }}</div>
-                            <a href="{{ route('abouteventos', $event) }}" class="sectionEventsCardsSaberMais"><span>Saber Mais</span></a>
+                            <div class="sectionEventsCardsDescricao">
+                                {{ \Illuminate\Support\Str::limit($event->description, 100, '...') }}
+                            </div>
+                            <a href="{{ route('abouteventos', $event) }}" class="sectionEventsCardsSaberMais"><span>SaberMais</span></a>
                         </div>
                     </div>
                 @endif
