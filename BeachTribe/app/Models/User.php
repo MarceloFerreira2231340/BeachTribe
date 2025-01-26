@@ -55,4 +55,10 @@ class User extends Authenticatable
             case 'A': return 'Administrador';
         }
     }
+
+    public function subscriptions()
+{
+    return $this->hasMany(ClassSubscription::class, 'users_id');
+}
+
 }

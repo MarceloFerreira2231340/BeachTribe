@@ -23,10 +23,6 @@ return new class extends Migration
             $table->decimal('price', 8, 2)->default(0.00)->notNullable(); 
             $table->integer('duration')->notNullable();
 
-            /*
-            $table->unsignedBigInteger('sports_id');
-            $table->foreign('sports_id')->references('id')->on('sports')->onDelete('cascade');
-            */
             
             $table->timestamps();
         });

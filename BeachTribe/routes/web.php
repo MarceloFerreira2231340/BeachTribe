@@ -11,6 +11,7 @@ use App\Http\Controllers\EventController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\AboutUsController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\ClassSubscriptionController;
 
 /*
 |--------------------------------------------------------------------------
@@ -39,6 +40,8 @@ Route::get('/surf', [PageController::class, 'surf'])->name('surf');
 Route::get('/aboutus', [AboutUsController::class, 'index'])->name('aboutus');
 
 Route::get('/admin', [PageController::class, 'admindashboard'])->name('admin.dashboard');
+
+Route::post('/inscrever', [ClassSubscriptionController::class, 'store'])->name('class_subscription.store');
 
 Route::resource('admin/users', UserController::class, ['as' => 'admin']);
 
