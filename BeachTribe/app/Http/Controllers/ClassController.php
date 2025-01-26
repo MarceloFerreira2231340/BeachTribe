@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\ClassRequest;
 use App\Models\Class_;
+use Illuminate\Support\Facades\Auth;
 
 class ClassController extends Controller
 {
@@ -56,10 +57,12 @@ class ClassController extends Controller
     }
 
     public function calendario()
-    {
-        $classes = Class_::where('state', 'A')->orderBy('date', 'asc')->get();
+{
+    $classes = Class_::all(); 
+    $userSubscriptions = Auth::user()->subscriptions;
 
-        return view('CalendarioDeAulas', compact('classes'));
-    }
+    return view('CalendarioDeAulas', compact('classes', 'userSubscriptions'));
+}
+
 }
 

@@ -17,13 +17,26 @@
         <h3>Aqui podes consultar as aulas e os horários disponíveis durante o mês</h3>
     </div>
 
+    {{-- Feedback de sucesso ou erro --}}
+    @if(session('success'))
+        <div class="alert alert-success">
+            {{ session('success') }}
+        </div>
+    @endif
+
+    @if(session('error'))
+        <div class="alert alert-danger">
+            {{ session('error') }}
+        </div>
+    @endif
+
     <div class="">
         @php
             $currentMonth = null;
         @endphp
 
         @foreach($classes as $class)
-            
+            {{-- Título do mês --}}
             @if($currentMonth != date('F, Y', strtotime($class->date)))
                 @php
                     $currentMonth = date('F, Y', strtotime($class->date));
@@ -33,8 +46,9 @@
                 </div>
             @endif
 
+            {{-- Card de aula --}}
             <div class="fix">
-                <div class="border rounded shadow-sm cardaula">
+                <div class="shadow-sm cardaula">
                     
                     <div class="areadate">
                         <h2>{{ date('D', strtotime($class->date)) }}</h2>
@@ -43,7 +57,6 @@
 
                     <div class="vr"></div>
 
-                    
                     <div class="horaloc">
                         <div class="hora">
                             <i class="bi bi-clock-fill"></i>
@@ -55,7 +68,6 @@
                         </div>
                     </div>
 
-                    
                     <div class="tipoprice">
                         <div class="tipo">
                             <i class="bi bi-info-circle-fill"></i>
@@ -67,9 +79,21 @@
                         </div>
                     </div>
 
-                    
+                    {{-- Verificar inscrição --}}
                     <div class="final-botao">
-                        <a class="btninscrever" href="#" role="button">Inscrever</a>
+                        @php
+                            $isSubscribed = $userSubscriptions->contains('classes_id', $class->id);
+                        @endphp
+
+                        @if($isSubscribed)
+                            <button class="btninscrever" style="background-color: #F4A460; color: #fff;" disabled>INSCRITO</button>
+                        @else
+                            <form action="{{ route('class_subscription.store') }}" method="POST">
+                                @csrf
+                                <input type="hidden" name="classes_id" value="{{ $class->id }}">
+                                <button type="submit" class="btninscrever">Inscrever</button>
+                            </form>
+                        @endif
                     </div>
                 </div>
             </div>

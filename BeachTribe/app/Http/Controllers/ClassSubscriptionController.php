@@ -2,64 +2,44 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\ClassSubscription;
 use Illuminate\Http\Request;
+use App\Models\ClassSubscription;
+use Illuminate\Support\Facades\Auth;
 
 class ClassSubscriptionController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
-    public function index()
-    {
-        //
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     */
     public function store(Request $request)
     {
-        //
-    }
+        // Verifica se o utilizador está autenticado
+        if (!Auth::check()) {
+            return redirect()->route('login')->with('error', 'Precisas de iniciar sessão para te inscrever.');
+        }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(ClassSubscription $classSubscriptions)
-    {
-        //
-    }
+        // Obtem o utilizador atual
+        $user = Auth::user();
 
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(ClassSubscription $classSubscriptions)
-    {
-        //
-    }
+        // Valida o ID da aula
+        $validated = $request->validate([
+            'classes_id' => 'required|exists:classes,id',
+        ]);
 
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, ClassSubscription $classSubscriptions)
-    {
-        //
-    }
+        // Verifica se o utilizador já está inscrito na aula
+        $alreadySubscribed = \DB::table('class_subscriptions')
+            ->where('classes_id', $validated['classes_id'])
+            ->where('users_id', $user->id)
+            ->exists();
 
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(ClassSubscription $classSubscriptions)
-    {
-        //
+        if ($alreadySubscribed) {
+            return redirect()->back()->with('error', 'Já estás inscrito nesta aula.');
+        }
+
+        // Cria a inscrição
+        ClassSubscription::create([
+            'classes_id' => $validated['classes_id'],
+            'users_id' => $user->id,
+        ]);
+
+        return redirect()->back()->with('success', 'Inscrição efetuada com sucesso!');
     }
 }
+
