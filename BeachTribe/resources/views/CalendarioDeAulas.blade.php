@@ -48,7 +48,7 @@
 
             {{-- Card de aula --}}
             <div class="fix">
-                <div class="border rounded shadow-sm cardaula">
+                <div class="shadow-sm cardaula">
                     
                     <div class="areadate">
                         <h2>{{ date('D', strtotime($class->date)) }}</h2>
