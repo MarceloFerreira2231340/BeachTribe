@@ -632,6 +632,32 @@ footer {
     box-shadow: inset 0 0 5px #F4A460;
 }
 
+/*-------------------------------About Eventos-------------------------------*/
+.aboutEventosTitle, .aboutEventosLocal {
+    text-align: center;
+}
+
+.aboutEventosImg > img {
+    display: block;
+    max-width: 40%;
+    height: auto;
+    margin: 0 auto;
+    border-radius: 5px;
+}
+
+.aboutEventosDescription{
+    text-align: center;
+    flex-wrap: wrap;
+    text-align: justify;
+    max-width: 60%;
+    margin: 0 auto;
+    white-space: pre-line;
+    margin-bottom: 1rem;
+    margin-bottom: 75px;
+}
+
+
+
 /*-------------------------------Media-------------------------------*/
 @media (max-width: 999px) {
     #CategoriasPromocao {

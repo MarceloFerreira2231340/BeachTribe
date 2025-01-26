@@ -23,21 +23,51 @@
 @endsection
 
 @section('content')
-<div class="container-fluid">
+    <div style="position: relative;">
+        @if ($event->type == 'Festivais')
+            <div>
+                <img src="{{ Storage::url('events/FestivalBanner.png') }}" alt="Festival Banner" style="width: 100vw;">
+            </div>
+        @elseif($event->type == 'Formações')
+            <div>
+                <img src="{{ Storage::url('events/FormacaoBanner.png') }}" alt="Formação Banner" style="width: 100vw;">
+            </div>
+        @endif
+        <a href="{{ route('eventos') }}" class="btn btn-primary" style="position: absolute; top: 25px; left: 25px;"> &#8592;
+            Voltar</a>
+    </div>
 
-     <div class="card shadow mb-4">
-        <div class="card-header py-3">
-			Informação do Evento
+    <div class="aboutEventos">
+        <div class="aboutEventosTitle mt-4">
+            <h1>{{ $event->title }}</h1>
         </div>
-        <div class="card-body">
-			<div><strong>Tipo de Evento: </strong> {{ $event->type }} </div>
-			<div><strong>Titulo:</strong> {{ $event->title }} </div>
-            <div><strong>Imagem:</strong><br><img src="{{ Storage::url('events/' . $event->image) }}" width="250" alt="Banner da Carta"></div>
-			<div><strong>Descrição:</strong> {{ $event->description }} </div>
-            <div><strong>Local:</strong> {{ $event->local }} </div>
-            <div><strong>Estado do Evento:</strong> {{ $event->state }} </div>
-            <div><strong>Data do Evento:</strong> {{ $event->date }} </div>
-		</div>
-	</div>
-</div>
+        <div class="aboutEventosLocal">
+            <h5>📍{{ $event->local }}</h5>
+        </div>
+        <div class="aboutEventosImg">
+            <img src="{{ Storage::url('events/' . $event->image) }}" height="300" alt="Banner da Carta">
+        </div>
+        <div class="aboutEventosDescription">
+            <span>{{ $event->description }}</span>
+        </div>
+    </div>
+
+
+
+
+    {{-- <div class="container-fluid">
+        <div class="card shadow mb-4 mt-2">
+            <div class="card-header py-3">
+                <strong>{{ $event->title }}</strong>
+            </div>
+            <div class="card-body">
+                <div><img src="{{ Storage::url('events/' . $event->image) }}" width="500"
+                        alt="Banner da Carta"></div>
+                <div><strong>Descrição:</strong> {{ $event->description }} </div>
+                <div><strong>Local:</strong> {{ $event->local }} </div>
+                <div><strong>Estado do Evento:</strong> {{ $event->state }} </div>
+                <div><strong>Data do Evento:</strong> {{ $event->date }} </div>
+            </div>
+        </div>
+    </div> --}}
 @endsection
