@@ -59,6 +59,11 @@ class User extends Authenticatable
     public function subscriptions()
     {
         return $this->hasMany(ClassSubscription::class, 'users_id');
-    }    
+    }
+    
+    public function getIsAdminAttribute()
+    {
+        return $this->role === 'admin';
+    }
 
 }
