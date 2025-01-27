@@ -8,28 +8,22 @@
 
 	<div class="card shadow mb-4">
 		<div class="card-header pt-4">
-			<form method="GET" action="#" class="form-group form-inline" style="width: 100%">
-				<div class="form-group col-3">
-					<label for="inputName">Name</label>
-					<input type="text" class="form-control mx-2" name="name" id="inputName"
-					value="" />
+			<form method="GET" action="{{ route('admin.users.index') }}" class="form-group form-inline" style="width: 100%">
+				<div class="form-group" style="margin: 0 2% 0 2%;">
+					<label for="inputName">Nome</label>
+					<input type="text" class="form-control mx-2" name="name" id="inputName" value="{{ request('name') }}" />
 				</div>
-				<div class="form-group col-3">
-					<label for="inputEmail">Email</label>
-					<input type="email" class="form-control mx-2" name="email" id="inputEmail" placeholder="Email address"
-					value="" />
-				</div>
-				<div class="form-group col-3">
-					<label for="inputRole">Role</label>
-					<select name="role" id="inputRole" class="form-control mx-2">
-						<option value="">All</option>
-						<option value="Admin">Admin</option>
-						<option value="Normal">Normal</option>
+				<div class="form-group" style="margin: 0 2% 0 2%;">
+				<label for="selectRole">Tipo</label>
+					<select name="tipo" class="form-control mx-2" id="selectRole">
+						<option value="">-</option>
+						<option value="A" {{ request('tipo') == 'A' ? 'selected' : '' }}>Admin</option>
+						<option value="C" {{ request('tipo') == 'C' ? 'selected' : '' }}>Cliente</option>
 					</select>
 				</div>
 
-				<div class="form-group col-3">
-					<button type="submit" class="btn btn-success">Procurar</button>
+				<div class="form-group" style="margin: 0 2% 0 2%;">
+				<button type="submit" class="btn btn-success">Procurar</button>
 					&nbsp;
 					<a class="btn btn-primary" href="{{ route('admin.users.create') }}">
 						<i class="fas fa-plus"></i> Adicionar Utilizador
@@ -43,29 +37,29 @@
 					<table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
 						<thead>
 							<tr>
-								<th>Name</th>
+								<th>Nome</th>
 								<th>Email</th>
-								<th>Role</th>
+								<th>Tipo</th>
 								<th>Ações</th>
 							</tr>
 						</thead>
 						<tbody>
 							@foreach($users as $user)
-							<tr>
-								<td>{{ $user->name }}</td>
-								<td>{{ $user->email }}</td>
-								<td>{{ $user->roleToStr() }}</td>
-								<td nowrap>
-									<a class="btn btn-xs btn-primary btn-p" href="{{ route('admin.users.show', $user) }}"><i class="fas fa-eye fa-xs"></i></a>
-									<a class="btn btn-xs btn-warning btn-p" href="{{ route('admin.users.edit', $user) }}"><i class="fas fa-pen fa-xs"></i></a>
-									<form method="POST" action="{{ route('admin.users.destroy', $user) }}" role="form" class="inline">
-										@csrf
-										@method('DELETE')
-										<button type="submit" class="btn btn-xs btn-danger btn-p"><i class="fas fa-trash fa-xs"></i></button>
-									</form>
-								</td>
-							</tr>
-							@endforeach			
+								<tr>
+									<td>{{ $user->name }}</td>
+									<td>{{ $user->email }}</td>
+									<td>{{ $user->tipo == 'A' ? 'Administrador' : 'Cliente' }}</td>
+									<td nowrap>
+										<a class="btn btn-xs btn-primary btn-p" href="{{ route('admin.users.show', $user) }}"><i class="fas fa-eye fa-xs"></i></a>
+										<a class="btn btn-xs btn-warning btn-p" href="{{ route('admin.users.edit', $user) }}"><i class="fas fa-pen fa-xs"></i></a>
+										<form method="POST" action="{{ route('admin.users.destroy', $user) }}" role="form" class="inline">
+											@csrf
+											@method('DELETE')
+											<button type="submit" class="btn btn-xs btn-danger btn-p"><i class="fas fa-trash fa-xs"></i></button>
+										</form>
+									</td>
+								</tr>
+							@endforeach
 						</tbody>
 					</table>
 				</div>

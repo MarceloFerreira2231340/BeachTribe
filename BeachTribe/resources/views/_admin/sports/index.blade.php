@@ -8,29 +8,24 @@
 
 	<div class="card shadow mb-4">
 		<div class="card-header pt-4">
-			<form method="GET" action="#" class="form-group form-inline" style="width: 100%">
-				{{-- <div class="form-group col-3">
-					<label for="inputName">Name</label>
-					<input type="text" class="form-control mx-2" name="name" id="inputName"
-					value="" />
+			<form method="GET" action="{{ route('admin.sports.index') }}" class="form-group form-inline" style="width: 100%">
+				<div class="form-group" style="margin: 0 2% 0 2%;">
+					<label for="inputtitle">Título</label>
+					<input type="text" class="form-control mx-2" name="title" id="inputtitle" value="{{ request('name') }}" />
 				</div>
-				<div class="form-group col-3">
-					<label for="inputEmail">Email</label>
-					<input type="email" class="form-control mx-2" name="email" id="inputEmail" placeholder="Email address"
-					value="" />
-				</div>
-				<div class="form-group col-3">
-					<label for="inputRole">Role</label>
-					<select name="role" id="inputRole" class="form-control mx-2">
-						<option value="">All</option>
-						<option value="Admin">Admin</option>
-						<option value="Normal">Normal</option>
+				<div class="form-group" style="margin: 0 2% 0 2%;">
+				<label for="selectRole">Nível de Dificildade</label>
+					<select name="difficulty" class="form-control mx-2" id="selectRole">
+						<option value="">-</option>
+						<option value="Easy" {{ request('difficulty') == 'Easy' ? 'selected' : '' }}>Easy</option>
+						<option value="Medium" {{ request('difficulty') == 'Medium' ? 'selected' : '' }}>Medium</option>
+						<option value="Hard" {{ request('difficulty') == 'Hard' ? 'selected' : '' }}>Hard</option>
 					</select>
-				</div> --}}
+				</div>
 
-				<div class="form-group col-3">
-					{{-- <button type="submit" class="btn btn-success">Procurar</button>
-					&nbsp; --}}
+				<div class="form-group" style="margin: 0 2% 0 2%;">
+				<button type="submit" class="btn btn-success">Procurar</button>
+					&nbsp;
 					<a class="btn btn-primary" href="{{ route('admin.sports.create') }}">
 						<i class="fas fa-plus"></i> Adicionar Modalidade
 					</a>
@@ -47,6 +42,7 @@
 								<th>Imagem</th>
 								<th>Descrição</th>
 								<th>Nível de Dificuldade</th>
+								<th>Ações</th>
 							</tr>
 						</thead>
 						<tbody>
