@@ -14,7 +14,7 @@
 
     <div class="intro">
         <h1><b>Calendário de Aulas</b></h1>
-        <h3>Aqui podes consultar as aulas e os horários disponíveis durante o mês</h3>
+        <h3>Aqui podes consultar as aulas e os horários disponíveis por mês</h3>
     </div>
 
     {{-- Feedback de sucesso ou erro --}}
