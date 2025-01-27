@@ -30,7 +30,7 @@
         <section id="index_section2">
             <div id="index_s2_box" class="index_s2_boxes">
                 <div class="index_s2_cards" id="index_s2_rightcard1">
-                    <img src="img/Dinis/indexSurf.jpg">
+                    <img src="img/Carolina/Modalidades/surf.jpg">
                     <div class="index_s2_textareas">
                         <h2>Surf</h2>
                         <p>Desde aulas de surf a pranchas costumizadas, sinta-se à vontade para começar a praticar o desporto aquático mais popular do mundo.</p>
@@ -43,21 +43,21 @@
                 </div>
                 <div class="index_s2_cards" id="index_s2_leftcard">
                     <div class="index_s2_textareas">
-                        <h2>Windsurf</h2>
-                        <p>Encontre tudo o que precisar para se aventurar no vento das marés portuguesas.</p>
+                        <h2>Voleibol</h2>
+                        <p>Salte, divirta-se e exercite-se a praticar desportos em equipa como o voleibol.</p>
                         <a href="">
                             <div class="index_s2_vermais" id="index_s2_vermais_id2">
                                 Ver mais
                             </div>
                         </a>
                     </div>
-                    <img src="img/Dinis/indexWindsurf.jpg">
+                    <img src="img/Carolina/Modalidades/voleibol.jpg">
                 </div>
                 <div class="index_s2_cards" id="index_s2_rightcard2">
-                    <img src="img/Dinis/indexBodyboard.jpg">
+                    <img src="img/Carolina/Modalidades/natacao.jpg">
                     <div class="index_s2_textareas">
-                        <h2>Bodyboard</h2>
-                        <p>Descanse, refresque-se e aproveite a jornada de aprender uma nova atividade ao ar livre.</p>
+                        <h2>Natação</h2>
+                        <p>Aprenda ou melhore a sua técnica de natação para aproveitar o mar ao máximo.</p>
                         <a href="">
                             <div class="index_s2_vermais">
                                 Ver mais
@@ -74,41 +74,14 @@
             <div id="index_s3_area">
 
                 @foreach($events->take(3) as $event)
-                <div class="index_s3_cards">
-                    <img src="{{ $path_events.$event->image }}">
-                    <div class="index_s3_textarea">
-                        <h4>{{ $event->title }}</h4>
-                        <p>{{ $event->description }}</p>
+                    <div class="index_s3_cards">
+                        <img src="{{ $path_events.$event->image }}">
+                        <div class="index_s3_textarea">
+                            <h4>{{ $event->title }}</h4>
+                            <p>{{ \Illuminate\Support\Str::limit($event->description, 100, '...') }}</p>
+                        </div>
                     </div>
-                </div>
                 @endforeach
-                <!--
-
-                <div class="index_s3_cards">
-                    <img src="img/Dinis/indexEvento1.webp">
-                    <div class="index_s3_textarea">
-                        <h4>Formações de Nadador Salvador</h4>
-                        <p>Aprenda a salvar pessoas em situações de urgência da forma correta.</p>
-                    </div>
-                </div>
-
-                <div class="index_s3_cards">
-                    <img src="img/Dinis/indexEvento2.jpg">
-                    <div class="index_s3_textarea">
-                        <h4>Portugal em Festa de passagem</h4>
-                        <p>Faça parte desta experiência única no dia 29 de Junho na praia do Pedrogão.</p>
-                    </div>
-                </div>
-
-                <div class="index_s3_cards" id="index_s3_card3">
-                    <img src="img/Dinis/indexEvento3.png">
-                    <div class="index_s3_textarea" id="index_s3_card3">
-                        <h4>Concerto de Quim Barreiros</h4>
-                        <p>Veja o espetáculo da estrela nacional no dia 28 de Junho na Praia da Nazaré.</p>
-                    </div>
-                </div>
-
-                -->
 
             </div>
             <a href="{{route('eventos')}}">
@@ -133,44 +106,6 @@
                     </a>
                 @endforeach
 
-                <!--
-                <a href="https://wordpress.g6.dwm202425.online/product/baralho-de-cartas-azul/?preview=true">
-                    <div class="index_s4_cards">
-                        <img src="https://wordpress.g6.dwm202425.online/wp-content/uploads/2024/11/Acartasazul.png">
-                        <p>Baralho de Cartas</p>
-                    </div>
-                </a>
-                <a href="https://wordpress.g6.dwm202425.online/product/pin/">
-                    <div class="index_s4_cards">
-                        <img src="https://wordpress.g6.dwm202425.online/wp-content/uploads/2024/11/Apin.png">
-                        <p>Pin</p>
-                    </div>
-                </a>
-                <a href="https://wordpress.g6.dwm202425.online/product/caneca/">
-                    <div class="index_s4_cards">
-                        <img src="https://wordpress.g6.dwm202425.online/wp-content/uploads/2024/11/Acaneca1.png">
-                        <p>Caneca</p>
-                    </div>
-                </a>
-                <a href="https://wordpress.g6.dwm202425.online/product/autocolante/">
-                    <div class="index_s4_cards">
-                        <img src="https://wordpress.g6.dwm202425.online/wp-content/uploads/2024/11/Aautocolante.png">
-                        <p>Autocolante</p>
-                    </div>
-                </a>
-                <a href="https://wordpress.g6.dwm202425.online/product/hoodies-beachtribe/">
-                    <div class="index_s4_cards">
-                        <img src="https://wordpress.g6.dwm202425.online/wp-content/uploads/2024/11/Roupa-BeachTribe-11.png">
-                        <p>Hoodies BeachTribe</p>
-                    </div>
-                </a>
-                <a href="https://wordpress.g6.dwm202425.online/product/bone-branco/">
-                    <div class="index_s4_cards">
-                        <img src="https://wordpress.g6.dwm202425.online/wp-content/uploads/2024/11/Abone1preto.png">
-                        <p>Boné</p>
-                    </div>
-                </a>
-                -->
             </div>
             <a href="https://wordpress.g6.dwm202425.online/">
                 <div id="index_s4_loja">

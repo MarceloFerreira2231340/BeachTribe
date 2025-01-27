@@ -670,6 +670,7 @@ footer{
 .index_s3_cards{
     width: 300px;
     height: auto;
+    /*height: 360px;*/
     background-color: var(--laranja);
     border-radius: 60px 0 50px 0;
     margin: 0 25px 0 25px;
@@ -684,7 +685,11 @@ footer{
 }
 
 .index_s3_textarea{
+    width: 300px;
+    /*height: 150px;*/
     padding: 10px 20px 20px 20px;
+    /*overflow: hidden;
+    text-overflow: ellipsis;*/
 }
 
 .index_s3_textarea h4{
