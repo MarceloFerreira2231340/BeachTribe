@@ -27,7 +27,7 @@
           <input type="text" id="telefone" name="telefone" placeholder="+392 925676224" required oninput="this.value = this.value.replace(/[^0-9]/g, '');">
 
           <label for="message">Mensagem:</label>
-          <textarea placeholder="Don't write shit or u are canceled" id="message" name="message" required></textarea>
+          <textarea placeholder="Escrever a mensagem desejada aqui" id="message" name="message" required></textarea>
 
           <button type="submit">Submeter</button>
         </form>
