@@ -42,14 +42,24 @@
                     <a class="content_nav nav_widescreen" href="{{route('aboutus')}}">
                         <p>Sobre Nós</p>
                     </a>
-                    <a class="content_nav nav_widescreen" id="nav_login" href="{{ Auth::check() ? route('admin.dashboard') : route('login') }}">
+                    <a class="content_nav nav_widescreen" id="nav_login" href="{{ Auth::check() ? (Auth::user()->tipo == 'A' ? route('admin.dashboard') : route('login')) : route('login') }}">
                         @if(Auth::check())
-                        <p class="nav_widescreen">{{ Auth::user()->name }}</p>
-                    @else
-                        <p class="nav_widescreen">Log in</p>
-                    <img id="login_logo" class="nav_widescreen" src="{{asset('img/login_logo.png')}}">
-                    @endif
+                            <p class="nav_widescreen">{{ Auth::user()->name }}</p>
+                        @else
+                            <p class="nav_widescreen">Log in</p>
+                            <img id="login_logo" class="nav_widescreen" src="{{asset('img/login_logo.png')}}">
+                        @endif
                     </a>
+                    @if(Auth::check())
+                        <a class="content_nav nav_widescreen" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                            <p class="nav_widescreen">Logout</p>
+                        </a>
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                        @csrf
+                        </form>
+                    @endif
+
+                                                         
                 </div>
                 <a class="dropbtn">
                     <img id="dropdownIcon1" class="dorpdownIcons" src="{{asset('img/dropdown1.png')}}">
