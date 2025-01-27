@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\ProductRequest;
+use App\Http\Requests\ProductSearchRequest;
 use App\Models\Product;
 
 class ProductController extends Controller
@@ -10,9 +11,16 @@ class ProductController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(ProductSearchRequest $request)
     {
-        $products = Product::all();
+        $query = Product::query();
+
+        if ($request->filled('name')) {
+            $query->where('name', 'LIKE', '%' . $request->name . '%');
+        }
+
+        $products = $query->get();
+
         return view('_admin.products.index', compact('products'));
     }
 

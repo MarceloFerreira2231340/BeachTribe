@@ -4,15 +4,27 @@ namespace App\Http\Controllers;
 
 use App\Models\Sport;
 use App\Http\Requests\SportRequest;
+use App\Http\Requests\SportSearchRequest;
 
 class SportController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(SportSearchRequest $request)
     {
-        $sports = Sport::all();
+        $query = Sport::query();
+
+        if ($request->filled('title')) {
+            $query->where('title', 'LIKE', '%' . $request->title . '%');
+        }
+
+        if ($request->filled('difficulty')) {
+            $query->where('difficulty', $request->difficulty);
+        }
+
+        $sports = $query->get();
+
         return view('_admin.sports.index', compact('sports'));
     }
 

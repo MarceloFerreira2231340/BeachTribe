@@ -8,8 +8,15 @@
 
 	<div class="card shadow mb-4">
 		<div class="card-header pt-4">
-			<form method="GET" action="#" class="form-group form-inline" style="width: 100%">
-				<div class="form-group col-3">
+			<form method="GET" action="{{ route('admin.products.index') }}" class="form-group form-inline" style="width: 100%">
+				<div class="form-group" style="margin: 0 2% 0 2%;">
+					<label for="inputName">Nome</label>
+					<input type="text" class="form-control mx-2" name="name" id="inputName" value="{{ request('name') }}" />
+				</div>
+
+				<div class="form-group" style="margin: 0 2% 0 2%;">
+				<button type="submit" class="btn btn-success">Procurar</button>
+					&nbsp;
 					<a class="btn btn-primary" href="{{ route('admin.products.create') }}">
 						<i class="fas fa-plus"></i> Adicionar Produto
 					</a>

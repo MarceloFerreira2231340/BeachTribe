@@ -7,6 +7,7 @@
 
 
 	<div class="card shadow mb-4">
+		<!--
 		<div class="card-header pt-4">
 			<form method="GET" action="#" class="form-group form-inline" style="width: 100%">
 				{{-- <div class="form-group col-3">
@@ -33,6 +34,45 @@
 					&nbsp; --}}
 					<a class="btn btn-primary" href="{{ route('admin.events.create') }}">
 						<i class="fas fa-plus"></i> Adicionar Evento
+					</a>
+				</div>
+			</form>
+		</div>
+		-->
+
+		<div class="card-header pt-4">
+			<form method="GET" action="{{ route('admin.events.index') }}" class="form-group form-inline" style="width: 100%">
+				<div class="form-group" style="margin: 0 2% 0 2%;">
+					<label for="inputType">Tipo de Evento</label>
+						<select name="type" class="form-control mx-2" id="inputType">
+							<option value="">-</option>
+							<option value="Formações" {{ request('type') == 'Formações' ? 'selected' : '' }}>Formações</option>
+							<option value="Festivais" {{ request('type') == 'Festivais' ? 'selected' : '' }}>Festivais</option>
+						</select>
+				</div>
+				<div class="form-group" style="margin: 0 2% 0 2%;">
+					<label for="inputTitle">Título</label>
+					<input type="text" class="form-control mx-2" name="title" id="inputTitle" value="{{ request('title') }}" />
+				</div>
+				<div class="form-group" style="margin: 0 2% 0 2%;">
+				<label for="selectState">Estado</label>
+					<select name="state" class="form-control mx-2" id="selectState">
+						<option value="">-</option>
+						<option value="Ativado" {{ request('state') == 'Ativado' ? 'selected' : '' }}>Ativado</option>
+						<option value="Desativado" {{ request('state') == 'Desativado' ? 'selected' : '' }}>Desativado</option>
+					</select>
+				</div>
+				
+				<div class="form-group" style="margin: 0 2% 0 2%;">
+					<label for="inputDate">Data:</label>
+					<input type="date" class="form-control" name="date" id="inputDate" value="{{ request('title') }}" />
+				</div>
+
+				<div class="form-group" style="margin: 0 2% 0 2%;">
+				<button type="submit" class="btn btn-success">Procurar</button>
+					&nbsp;
+					<a class="btn btn-primary" href="{{ route('admin.events.create') }}">
+						<i class="fas fa-plus"></i> Adicionar Eventos
 					</a>
 				</div>
 			</form>

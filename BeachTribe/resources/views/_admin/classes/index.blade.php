@@ -8,15 +8,40 @@
 
     <div class="card shadow mb-4">
         <div class="card-header py-3">
-            <form method="GET" action="{{ route('admin.classes.index') }}" class="form-group form-inline" style="width: 100%;">
-
-                <!-- Botão de Adicionar -->
-                <div class="form-group col-3">
-                    <a class="btn btn-primary" href="{{ route('admin.classes.create') }}">
-                        <i class="fas fa-plus"></i> Adicionar Aula
-                    </a>
+			<form method="GET" action="{{ route('admin.classes.index') }}" class="form-group form-inline" style="width: 100%">
+				<div class="form-group" style="margin: 0 2% 0 2%;">
+					<label for="inputTitle">Título</label>
+					<input type="text" class="form-control mx-2" name="title" id="inputTitle" value="{{ request('title') }}" />
+				</div>
+				<div class="form-group" style="margin: 0 2% 0 2%;">
+                    <label for="selectType">Tipo</label>
+                        <select name="type" class="form-control mx-2" id="selectType">
+                            <option value="">-</option>
+                            <option value="A" {{ request('type') == 'A' ? 'selected' : '' }}>Avançado</option>
+                            <option value="M" {{ request('type') == 'M' ? 'selected' : '' }}>Médio</option>
+                            <option value="B" {{ request('type') == 'B' ? 'selected' : '' }}>Iniciante</option>
+                        </select>
                 </div>
-            </form>
+				<div class="form-group" style="margin: 0 2% 0 2%;">
+                    <label for="selectState">Estado</label>
+                        <select name="state" class="form-control mx-2" id="selectState">
+                            <option value="">-</option>
+                            <option value="A" {{ request('state') == 'A' ? 'selected' : '' }}>Ativo</option>
+                            <option value="H" {{ request('state') == 'H' ? 'selected' : '' }}>Desativo</option>
+                        </select>
+				</div>
+				<div class="form-group" style="margin: 0 2% 0 2%;">
+                    <label for="inputDate">Data:</label>
+                    <input type="date" class="form-control" name="date" id="inputDate" value="{{ request('date') }}" />
+				</div>
+				<div class="form-group" style="margin: 0 2% 0 2%;">
+				<button type="submit" class="btn btn-success">Procurar</button>
+					&nbsp;
+					<a class="btn btn-primary" href="{{ route('admin.classes.create') }}">
+						<i class="fas fa-plus"></i> Adicionar Aula
+					</a>
+				</div>
+			</form>
         </div>
         <div class="card-body p-5">
             <div class="row">

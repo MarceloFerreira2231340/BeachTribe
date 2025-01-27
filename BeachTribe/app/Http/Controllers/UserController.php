@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use App\Http\Requests\UserRequest;
+use App\Http\Requests\UserSearchRequest;
 use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
@@ -11,9 +12,20 @@ class UserController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(UserSearchRequest $request)
     {
-        $users = User::all();
+        $query = User::query();
+
+        if ($request->filled('name')) {
+            $query->where('name', 'LIKE', '%' . $request->name . '%');
+        }
+
+        if ($request->filled('tipo')) {
+            $query->where('tipo', $request->tipo);
+        }
+
+        $users = $query->get();
+
         return view('_admin.users.index', compact('users'));
     }
 
