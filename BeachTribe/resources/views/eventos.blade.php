@@ -49,7 +49,7 @@
                             <div class="sectionEventsCardsDescricao">
                                 {{ \Illuminate\Support\Str::limit($event->description, 100, '...') }}
                             </div>
-                            <a href="{{ route('abouteventos', $event) }}" class="sectionEventsCardsSaberMais"><span>SaberMais</span></a>
+                            <a href="{{ route('abouteventos', $event) }}" class="sectionEventsCardsSaberMais"><span>Saber Mais</span></a>
                         </div>
                     </div>
                 @endif
