@@ -48,7 +48,7 @@
 
             {{-- Card de aula --}}
             <div class="fix">
-                <div class="shadow-sm cardaula">
+                <div class="shadow-sm cardaula" style="border-color: #595959;">
                     
                     <div class="areadate">
                         <h2>{{ date('D', strtotime($class->date)) }}</h2>
@@ -81,18 +81,22 @@
 
                     {{-- Verificar inscrição --}}
                     <div class="final-botao">
-                        @php
-                            $isSubscribed = $userSubscriptions->contains('classes_id', $class->id);
-                        @endphp
+                        @if(Auth::check())
+                            @php
+                                $isSubscribed = $userSubscriptions->contains('classes_id', $class->id);
+                            @endphp
 
-                        @if($isSubscribed)
-                            <button class="btninscrever" style="background-color: #F4A460; color: #fff;" disabled>INSCRITO</button>
+                            @if($isSubscribed)
+                                <button class="btninscrever" style="background-color: #F4A460; color: #fff;" disabled>INSCRITO</button>
+                            @else
+                                <form action="{{ route('class_subscription.store') }}" method="POST">
+                                    @csrf
+                                    <input type="hidden" name="classes_id" value="{{ $class->id }}">
+                                    <button type="submit" class="btninscrever">Inscrever</button>
+                                </form>
+                            @endif
                         @else
-                            <form action="{{ route('class_subscription.store') }}" method="POST">
-                                @csrf
-                                <input type="hidden" name="classes_id" value="{{ $class->id }}">
-                                <button type="submit" class="btninscrever">Inscrever</button>
-                            </form>
+                            <button class="btninscrever" style="background-color: #A73D3D; color: #fff;" disabled>Inicie sessão para se inscrever</button>
                         @endif
                     </div>
                 </div>

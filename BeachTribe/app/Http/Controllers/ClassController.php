@@ -57,12 +57,12 @@ class ClassController extends Controller
     }
 
     public function calendario()
-{
-    $classes = Class_::all(); 
-    $userSubscriptions = Auth::user()->subscriptions;
-
-    return view('CalendarioDeAulas', compact('classes', 'userSubscriptions'));
-}
-
+    {
+        $classes = Class_::all();
+        $userSubscriptions = Auth::check() ? Auth::user()->subscriptions : collect();
+    
+        return view('CalendarioDeAulas', compact('classes', 'userSubscriptions'));
+    }
+    
 }
 
