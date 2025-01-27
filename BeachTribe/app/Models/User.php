@@ -63,7 +63,7 @@ class User extends Authenticatable
     
     public function getIsAdminAttribute()
     {
-        return $this->role === 'admin';
+    return $this->tipo === 'A';
     }
 
 }
