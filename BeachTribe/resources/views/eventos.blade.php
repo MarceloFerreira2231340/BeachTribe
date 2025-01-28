@@ -32,11 +32,6 @@
                     à praia mais próxima ou inscreve-te online!</span>
                 <span>Se tens um evento que gostarias de partilhar connosco, não hesites em contactar-nos!</span>
             </div>
-            <div class="addEventBlade">
-                <a class="btn btn-primary" href="{{ route('admin.events.create') }}">
-                    <i class="fas fa-plus"></i> Adicionar Evento
-                </a>
-            </div>
         </div>
 
         <div class="sectionsEventsDisplay">

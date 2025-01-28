@@ -30,7 +30,7 @@ class EventController extends Controller
         if ($request->filled('date')) {
             $query->where('date', 'LIKE', '%' . $request->date . '%');
         }
-        
+
 
         $events = $query->get();
 
@@ -117,10 +117,19 @@ class EventController extends Controller
      * Remove the specified resource from storage.
      */
     public function destroy(Event $event)
-    {
-        $event->delete();
-
-        return redirect()->route('admin.events.index')
-            ->with('success', 'Evento eliminado com sucesso');
+{
+    // Verifica se o evento possui uma imagem associada
+    if ($event->image) {
+        $imagePath = storage_path('app/public/events/' . $event->image);
+        if (file_exists($imagePath)) {
+            unlink($imagePath); // Remove o arquivo da imagem
+        }
     }
+
+    // Remove o evento do banco de dados
+    $event->delete();
+
+    return redirect()->route('admin.events.index')
+        ->with('success', 'Evento eliminado com sucesso');
+}
 }
