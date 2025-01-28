@@ -22,7 +22,21 @@
 
 
         <section id="index_section1">
-            <p>Somos uma associação focada na importância de manter um dia a dia ativo, aproveitando a beleza natural nacional e benefícios de saúde de um ambiente de praia.<br><br>Faça cada dia valer a pena.</p>
+            <div id=index_section1_div>
+                <p>Somos uma associação focada na importância de manter um dia a dia ativo, aproveitando a beleza natural nacional e benefícios de saúde de um ambiente de praia.<br><br>Faça cada dia valer a pena.</p>
+            </div>
+            <div id="index_video_div">
+                <embed id="index_video" type="video/webm" src="https://youtube.com/embed/iTC8Zueooq0?si=G5vUQsNDgL_EsEi3" width="auto" height="400px">
+                <div>
+                    <h2 style="margin: 50px 0 0 5%; font-size:32pt; text-align:left;">Loja BeachTribe</h2>
+                    <p>Veja a nossa loja!<br><br>Aqui pode encontrar diversos produtos com o intuito de <span style="color:var(--laranja)">melhorar a qualidade dos nossos serviços</span> e aumentar a influência de um <span style="color:var(--laranja)">estilo de vida saudável</span>.<br><br>Faça parte de algo maior ainda hoje e <span style="color:var(--laranja)">junte-se a nós nesta aventura</span>.</p>
+                    <a href="https://wordpress.g6.dwm202425.online/" style="text-decoration:none">
+                        <div id="index_section1_loja" style="margin:50px 0 0 5%;">
+                            Loja
+                        </div>
+                    </a>
+                </div>
+            </div>
         </section>
 
 

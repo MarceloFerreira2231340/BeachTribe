@@ -553,10 +553,58 @@ footer{
     height: auto;
     background-color: var(--background);
     color: white;
-    padding: 50px 100px;
     text-align: center;
     font-weight: bold;
     font-size: 11pt;
+}
+
+#index_section1_div{
+    padding: 50px 100px;
+}
+
+
+
+#index_section1_loja{
+    width: 350px;
+    padding: 10px 0;
+    border: 2px var(--azul) solid;
+    border-radius: 50px;
+    background-color: var(--background);
+    color: var(--azul);
+    font-weight: bold;
+    font-size: 18pt;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    filter: drop-shadow(0 5px 0 var(--azul));
+    transition: 0.2s;
+}
+
+#index_section1_loja:hover{
+    background-color: var(--azul);
+    color: var(--background);
+    filter: drop-shadow(0 0 0);
+    transition: 0.2s;
+}
+
+
+
+#index_video_div{
+    margin-top: 50px;
+    display: flex;
+    flex-direction: row;
+}
+
+#index_video{
+    height: 540px;
+    width: 960px;
+    filter: drop-shadow(25px 25px 0 var(--azul));
+    margin: 0 75px 75px 100px;
+}
+
+#index_video_div p{
+    margin: 50px 100px 0 0;
+    text-align: left;
 }
 
 
@@ -946,6 +994,36 @@ footer{
 
 
 
+    #index_video_div{
+        flex-direction: column;
+    }
+
+    #index_video{
+        height: 540px;
+        width: auto;
+        filter: drop-shadow(25px 25px 0 var(--azul));
+        margin: 0 50px 0 50px;
+    }
+
+
+    
+    #index_video_div p{
+        margin: 50px 25px 0 25px;
+        text-align: left;
+    }
+
+    #index_section1_loja{
+        width: auto;
+        margin: 50px 25px !important;
+    }
+
+    #index_video_div h2{
+        text-align: center !important;
+        margin: 100px 0 0 0 !important;
+    }
+
+
+
     #index_section2{
         padding: 50px 25px 60px 25px;
     }
@@ -1025,6 +1103,35 @@ footer{
 }
 
 @media(max-width: 600px){
+    #index_section1{
+        padding: 0;
+    }
+
+    #index_section1_div{
+        padding: 50px 5%;
+    }
+
+    #index_video{
+        height: 320px;
+        filter: drop-shadow(0 0 0 var(--azul));
+        margin: 0 0 75px 0;
+    }
+    
+    #index_video_div p{
+        margin: 50px 25px 0 25px;
+        text-align: left;
+    }
+
+    #index_section1_loja{
+        width: auto;
+        margin: 50px 25px !important;
+    }
+
+    #index_video_div h2{
+        text-align: center !important;
+        margin: 0 !important;
+    }
+
     #index_section2{
         padding: 50px 0 50px 0;
     }
