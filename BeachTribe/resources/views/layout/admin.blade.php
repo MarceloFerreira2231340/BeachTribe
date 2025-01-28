@@ -103,6 +103,7 @@
                 </div>
             </li>
 
+            <!--
             <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseContactos"
                     aria-expanded="true" aria-controls="collapseContactos">
@@ -130,6 +131,7 @@
                     </div>
                 </div>
             </li>
+            -->
 
             <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseProducts"
