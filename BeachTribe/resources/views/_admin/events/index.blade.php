@@ -62,7 +62,7 @@
 						<option value="Desativado" {{ request('state') == 'Desativado' ? 'selected' : '' }}>Desativado</option>
 					</select>
 				</div>
-				
+
 				<div class="form-group" style="margin: 0 2% 0 2%;">
 					<label for="inputDate">Data:</label>
 					<input type="date" class="form-control" name="date" id="inputDate" value="{{ request('title') }}" />
@@ -104,11 +104,35 @@
 								<td nowrap>
 									<a class="btn btn-xs btn-primary btn-p" href="{{ route('admin.events.show', $event) }}"><i class="fas fa-eye fa-xs"></i></a>
 									<a class="btn btn-xs btn-warning btn-p" href="{{ route('admin.events.edit', $event) }}"><i class="fas fa-pen fa-xs"></i></a>
-									<form method="POST" action="{{ route('admin.events.destroy', $event) }}" role="form" class="inline">
-										@csrf
-										@method('DELETE')
-										<button type="submit" class="btn btn-xs btn-danger btn-p"><i class="fas fa-trash fa-xs"></i></button>
-									</form>
+
+                                    <button type="button" class="btn btn-xs btn-danger btn-p" data-toggle="modal" data-target="#deleteModal-{{ $event->id }}">
+                                        <i class="fas fa-trash fa-xs"></i>
+                                    </button>
+
+                                    <!-- Modal -->
+                                    <div class="modal fade" id="deleteModal-{{ $event->id }}" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel-{{ $event->id }}" aria-hidden="true">
+                                        <div class="modal-dialog" role="document">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="deleteModalLabel-{{ $event->id }}">Confirmar Exclusão</h5>
+                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                        <span aria-hidden="true">&times;</span>
+                                                    </button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    Tem certeza de que deseja excluir este evento?
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                                                    <form method="POST" action="{{ route('admin.events.destroy', $event) }}" role="form" class="inline">
+                                                        @csrf
+                                                        @method('DELETE')
+                                                        <button type="submit" class="btn btn-danger">Excluir</button>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
 								</td>
 							</tr>
 							@endforeach
