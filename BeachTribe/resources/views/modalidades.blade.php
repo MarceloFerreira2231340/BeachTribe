@@ -2,7 +2,7 @@
 @section('title', 'Modalidades')
 
 @section('styles')
-<link rel="stylesheet" href="{{('css/Marcelo/style.css')}}">
+<link rel="stylesheet" href="{{('css/Carolina/style.css')}}">
     <link rel="stylesheet" href="{{('css/Carolina/normalize.css')}}">
     <link href='https://fonts.googleapis.com/css?family=IBM%20Plex%20Mono' rel='stylesheet'>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -22,29 +22,43 @@
 @endsection
 
 @section('content')
-<div class="beachTribeEvents">
-    <img src="{{('img\Carolina\Modalidades\modalidadesbanner.jpg')}}" alt="HeroImage">
-    <div class="sectionEvents">
-        <div class="sectionEventsTitle">Modalidades</div>
-        <div class="sectionEventsText">Aqui podes encontrar as diversas modalidades que oferecemos nas praias dos nossos clubes!<br>Desde surf até voleibol de praia, há sempre algo interessante para praticar.<br><br>Escolhe a tua modalidade favorita e junta-te a nós!</div>
+<div class="modalidades">
+    <div class="sectionsModDisplay">
+
+        <div class="mods">
+            <img src="{{ '\img\Carolina\Modalidades\modalidadesbanner.jpg' }}" alt="HeroImage" class="imgbanner">
+            <div class="sectionMods">
+                <div class="sectionModsTitle">Modalidades</div>
+                <div class="sectionModsText">
+                    <span>Descubra as nossas modalidades desportivas! Oferecemos uma ampla variedade de desportos para todas as idades e níveis de 
+                    experiência. <p>Explore atividades que promovem saúde, diversão e espírito de equipa. Seja para se desafiar ou apenas se divertir, temos a modalidade ideal 
+                    para si!</span>
+                </div>
+        </div>
+        <div class="ModsCards">
+        @foreach ($sports as $sport)
+            @if ($sport->state !== 'desativado')
+                <div class="sectionModCards">
+                    <img src="{{ Storage::url('sports/' . $sport->image) }}" alt="imgs" class="sectionModCardsImage">
+                    
+                    <div class="sectionModCardsInfo">
+                        <div class="sectionModCardsTitle">
+                            {{ $sport->type }} <br>{{ $sport->title }}
+                        </div>
+                        
+                        <div class="sectionModCardsDescricao">
+                            {{ \Illuminate\Support\Str::limit($sport->description, 100, '...') }}
+                        </div>
+                        
+                        <a href="" class="sectionModCardsSaberMais">
+                            <span>Saber Mais</span>
+                        </a>
+                    </div>
+                </div>
+            @endif
+        @endforeach
+    </div>
     </div>
 
-        <div class="sectionsEventsDisplay">
-
-            @foreach($sports as $sport)
-        <div class="sectionEventsCards">
-            <img src="{{ asset('img/Carolina/Modalidades/' . $sport->image) }}" alt="Banner da Carta">
-            <div class="sectionEventsCardsInfo">
-                <div class="sectionEventsCardsTitle">{{ $sport->title }}</div>
-                <div class="sectionEventsCardsDescricao">{{ $sport->description }}</div>
-                <a href="#" class="sectionEventsCardsSaberMais">
-                    <span>Saber Mais</span>
-                </a>
-            </div>
-        </div>
-            @endforeach
-
-        </div>
-
-    </div>
+</div>
 @endsection
